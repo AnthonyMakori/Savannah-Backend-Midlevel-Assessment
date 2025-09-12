@@ -1,0 +1,142 @@
+replicaCount: 1
+
+image:
+  repository: store-backend
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 8000
+
+ingress:
+  enabled: true
+  className: "nginx"
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+  hosts:
+    - host: store-api.example.com
+      paths:
+        - path: /
+          pathType: Prefix
+
+resources:
+  limits:
+    cpu: 500m
+    memory: 512Mi
+  requests:
+    cpu: 100m
+    memory: 256Mi
+
+env:
+  - name: DEBUG
+    value: "False"
+  - name: ALLOWED_HOSTS
+    value: "store-api.example.com,localhost,127.0.0.1"
+  - name: DB_NAME
+    valueFrom:
+      secretKeyRef:
+        name: store-secrets
+        key: db-name
+  - name: DB_USER
+    valueFrom:
+      secretKeyRef:
+        name: store-secrets
+        key: db-user
+  - name: DB_PASSWORD
+    valueFrom:
+      secretKeyRef:
+        name: store-secrets
+        key: db-password
+  - name: DB_HOST
+    valueFrom:
+      secretKeyRef:
+        name: store-secrets
+        key: db-host
+  - name: DB_PORT
+    valueFrom:
+      secretKeyRef:
+        name: store-secrets
+        key: db-port
+  - name: SECRET_KEY
+    valueFrom:
+      secretKeyRef:
+        name: store-secrets
+        key: secret-key
+  - name: OIDC_RP_CLIENT_ID
+    valueFrom:
+      secretKeyRef:
+        name: store-secrets
+        key: oidc-client-id
+  - name: OIDC_RP_CLIENT_SECRET
+    valueFrom:
+      secretKeyRef:
+        name: store-secrets
+        key: oidc-client-secret
+  - name: OIDC_OP_AUTHORIZATION_ENDPOINT
+    valueFrom:
+      secretKeyRef:
+        name: store-secrets
+        key: oidc-auth-endpoint
+  - name: OIDC_OP_TOKEN_ENDPOINT
+    valueFrom:
+      secretKeyRef:
+        name: store-secrets
+        key: oidc-token-endpoint
+  - name: OIDC_OP_USER_ENDPOINT
+    valueFrom:
+      secretKeyRef:
+        name: store-secrets
+        key: oidc-user-endpoint
+  - name: OIDC_OP_JWKS_ENDPOINT
+    valueFrom:
+      secretKeyRef:
+        name: store-secrets
+        key: oidc-jwks-endpoint
+  - name: EMAIL_HOST
+    valueFrom:
+      secretKeyRef:
+        name: store-secrets
+        key: email-host
+  - name: EMAIL_PORT
+    valueFrom:
+      secretKeyRef:
+        name: store-secrets
+        key: email-port
+  - name: EMAIL_HOST_USER
+    valueFrom:
+      secretKeyRef:
+        name: store-secrets
+        key: email-user
+  - name: EMAIL_HOST_PASSWORD
+    valueFrom:
+      secretKeyRef:
+        name: store-secrets
+        key: email-password
+  - name: DEFAULT_FROM_EMAIL
+    valueFrom:
+      secretKeyRef:
+        name: store-secrets
+        key: email-from
+  - name: ADMIN_EMAIL
+    valueFrom:
+      secretKeyRef:
+        name: store-secrets
+        key: admin-email
+  - name: AFRICASTALKING_USERNAME
+    valueFrom:
+      secretKeyRef:
+        name: store-secrets
+        key: africastalking-username
+  - name: AFRICASTALKING_API_KEY
+    valueFrom:
+      secretKeyRef:
+        name: store-secrets
+        key: africastalking-api-key
+  - name: AFRICASTALKING_SENDER
+    valueFrom:
+      secretKeyRef:
+        name: store-secrets
+        key: africastalking-sender

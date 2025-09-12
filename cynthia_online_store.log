@@ -1,0 +1,267 @@
+INFO 2025-05-30 10:54:47,240 autoreload 2628 8396 Watching for file changes with StatReloader
+INFO 2025-05-30 10:55:09,532 basehttp 2628 2176 "GET / HTTP/1.1" 302 0
+INFO 2025-05-30 10:55:09,786 basehttp 2628 2176 "GET /swagger/ HTTP/1.1" 200 2250
+INFO 2025-05-30 10:55:15,200 basehttp 2628 2176 "GET /swagger/?format=openapi HTTP/1.1" 200 36646
+WARNING 2025-05-30 10:55:17,483 log 2628 2176 Not Found: /serviceworker.js
+WARNING 2025-05-30 10:55:17,486 basehttp 2628 2176 "GET /serviceworker.js HTTP/1.1" 404 4939
+INFO 2025-05-30 10:55:46,755 basehttp 2628 2176 "GET /api/categories/ HTTP/1.1" 200 1453
+INFO 2025-05-30 10:56:14,436 basehttp 2628 2176 "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-05-30 10:56:14,674 basehttp 2628 2176 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4200
+INFO 2025-05-30 10:56:14,925 basehttp 2628 2176 "GET /static/admin/css/base.css HTTP/1.1" 200 22120
+INFO 2025-05-30 10:56:14,926 basehttp 2628 11676 "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2808
+INFO 2025-05-30 10:56:14,926 basehttp 2628 12636 "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+WARNING 2025-05-30 10:56:15,000 log 2628 2176 Not Found: /admn
+WARNING 2025-05-30 10:56:15,002 basehttp 2628 2176 "GET /admn HTTP/1.1" 404 4903
+WARNING 2025-05-30 10:56:18,063 log 2628 2176 Not Found: /favicon.ico
+WARNING 2025-05-30 10:56:18,064 basehttp 2628 2176 "GET /favicon.ico HTTP/1.1" 404 4924
+WARNING 2025-05-30 10:56:19,694 log 2628 2176 Not Found: /serviceworker.js
+WARNING 2025-05-30 10:56:20,371 basehttp 2628 2176 "GET /serviceworker.js HTTP/1.1" 404 4939
+INFO 2025-05-30 10:56:25,421 basehttp 2628 2176 "GET /admin HTTP/1.1" 301 0
+INFO 2025-05-30 10:56:25,436 basehttp 2628 12636 "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-05-30 10:56:25,455 basehttp 2628 12636 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4200
+INFO 2025-05-30 10:56:26,215 basehttp 2628 12636 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+INFO 2025-05-30 10:56:26,215 basehttp 2628 11676 "GET /static/admin/css/login.css HTTP/1.1" 200 951
+INFO 2025-05-30 10:56:26,232 basehttp 2628 7304 "GET /static/admin/css/responsive.css HTTP/1.1" 200 16565
+INFO 2025-05-30 10:56:26,279 basehttp 2628 13296 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+WARNING 2025-05-30 10:56:28,101 log 2628 13296 Not Found: /serviceworker.js
+WARNING 2025-05-30 10:56:28,103 basehttp 2628 13296 "GET /serviceworker.js HTTP/1.1" 404 4939
+INFO 2025-05-30 10:56:46,711 basehttp 2628 13296 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-05-30 10:56:48,684 basehttp 2628 13296 "GET /admin/ HTTP/1.1" 200 13126
+INFO 2025-05-30 10:56:48,734 basehttp 2628 13296 "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2025-05-30 10:56:49,558 basehttp 2628 7304 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2025-05-30 10:56:49,562 basehttp 2628 13296 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+WARNING 2025-05-30 10:56:53,085 log 2628 13296 Not Found: /serviceworker.js
+WARNING 2025-05-30 10:56:53,086 basehttp 2628 13296 "GET /serviceworker.js HTTP/1.1" 404 4939
+WARNING 2025-05-30 10:57:32,151 log 2628 13296 Not Found: /serviceworker.js
+WARNING 2025-05-30 10:57:32,152 basehttp 2628 13296 "GET /serviceworker.js HTTP/1.1" 404 4939
+ERROR 2025-05-30 10:59:44,267 exception 13280 12572 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\monyancha\Desktop\cynthia-store\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\monyancha\Desktop\cynthia-store\venv\Lib\site-packages\django\utils\deprecation.py", line 119, in __call__
+    response = self.process_request(request)
+  File "C:\Users\monyancha\Desktop\cynthia-store\venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\monyancha\Desktop\cynthia-store\venv\Lib\site-packages\django\http\request.py", line 186, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+WARNING 2025-05-30 10:59:44,488 log 13280 12572 Bad Request: /api/categories/
+INFO 2025-05-30 11:10:51,379 autoreload 2628 8396 C:\Users\monyancha\Desktop\cynthia-store\config\settings.py changed, reloading.
+INFO 2025-05-30 11:10:56,944 autoreload 13128 8736 Watching for file changes with StatReloader
+INFO 2025-05-30 11:13:09,766 autoreload 13128 8736 C:\Users\monyancha\Desktop\cynthia-store\config\settings.py changed, reloading.
+INFO 2025-05-30 11:13:15,815 autoreload 1440 12772 Watching for file changes with StatReloader
+INFO 2025-05-30 11:14:22,421 autoreload 1440 12772 C:\Users\monyancha\Desktop\cynthia-store\config\settings.py changed, reloading.
+INFO 2025-05-30 11:14:26,689 autoreload 12720 11740 Watching for file changes with StatReloader
+INFO 2025-05-30 11:16:14,814 autoreload 12720 11740 C:\Users\monyancha\Desktop\cynthia-store\config\settings.py changed, reloading.
+INFO 2025-05-30 11:16:21,322 autoreload 12772 9156 Watching for file changes with StatReloader
+INFO 2025-05-30 11:18:35,938 autoreload 12772 9156 C:\Users\monyancha\Desktop\cynthia-store\config\settings.py changed, reloading.
+INFO 2025-05-30 11:18:41,679 autoreload 11384 8964 Watching for file changes with StatReloader
+INFO 2025-05-30 11:26:25,061 autoreload 11384 8964 C:\Users\monyancha\Desktop\cynthia-store\config\settings.py changed, reloading.
+INFO 2025-05-30 11:26:32,392 autoreload 12356 8048 Watching for file changes with StatReloader
+INFO 2025-05-30 11:42:24,191 autoreload 12356 8048 C:\Users\monyancha\Desktop\cynthia-store\config\settings.py changed, reloading.
+INFO 2025-05-30 11:42:33,152 autoreload 2588 12456 Watching for file changes with StatReloader
+INFO 2025-05-30 11:43:58,109 autoreload 2588 12456 C:\Users\monyancha\Desktop\cynthia-store\config\settings.py changed, reloading.
+INFO 2025-05-30 11:44:04,745 autoreload 7460 8252 Watching for file changes with StatReloader
+INFO 2025-05-30 12:37:28,511 basehttp 7460 6260 "GET / HTTP/1.1" 302 0
+INFO 2025-05-30 12:37:29,350 basehttp 7460 6260 "GET /swagger/ HTTP/1.1" 200 2250
+INFO 2025-05-30 12:37:34,650 basehttp 7460 6260 "GET /swagger/?format=openapi HTTP/1.1" 200 36646
+WARNING 2025-05-30 12:37:36,796 log 7460 6260 Not Found: /serviceworker.js
+WARNING 2025-05-30 12:37:36,797 basehttp 7460 6260 "GET /serviceworker.js HTTP/1.1" 404 4939
+WARNING 2025-05-30 12:38:14,660 log 7460 6260 Not Found: /serviceworker.js
+WARNING 2025-05-30 12:38:14,665 basehttp 7460 6260 "GET /serviceworker.js HTTP/1.1" 404 4939
+INFO 2025-05-30 12:38:19,715 basehttp 7460 6260 "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-05-30 12:38:19,953 basehttp 7460 6260 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4200
+INFO 2025-05-30 12:38:20,126 basehttp 7460 6260 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-05-30 12:38:20,200 basehttp 7460 10780 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-05-30 12:38:20,276 basehttp 7460 12180 "GET /static/admin/css/login.css HTTP/1.1" 304 0
+INFO 2025-05-30 12:38:20,289 basehttp 7460 4052 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-05-30 12:38:20,327 basehttp 7460 12980 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-05-30 12:38:20,354 basehttp 7460 12780 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-05-30 12:38:22,275 basehttp 7460 12780 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+WARNING 2025-05-30 12:38:25,159 log 7460 12780 Not Found: /serviceworker.js
+WARNING 2025-05-30 12:38:25,165 basehttp 7460 12780 "GET /serviceworker.js HTTP/1.1" 404 4939
+INFO 2025-05-30 12:38:34,171 basehttp 7460 12780 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-05-30 12:38:36,195 basehttp 7460 12780 "GET /admin/ HTTP/1.1" 200 13126
+INFO 2025-05-30 12:38:36,413 basehttp 7460 12780 "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+INFO 2025-05-30 12:38:38,553 basehttp 7460 12980 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+INFO 2025-05-30 12:38:38,554 basehttp 7460 12780 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+WARNING 2025-05-30 12:38:42,202 log 7460 12980 Not Found: /serviceworker.js
+WARNING 2025-05-30 12:38:42,223 basehttp 7460 12980 "GET /serviceworker.js HTTP/1.1" 404 4939
+INFO 2025-05-30 12:39:05,812 basehttp 7460 12980 "GET /admin/products/product/ HTTP/1.1" 200 19937
+INFO 2025-05-30 12:39:07,782 basehttp 7460 4052 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-05-30 12:39:08,076 basehttp 7460 10780 "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2025-05-30 12:39:08,091 basehttp 7460 6260 "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+INFO 2025-05-30 12:39:08,092 basehttp 7460 12980 "GET /static/admin/css/changelists.css HTTP/1.1" 200 6878
+INFO 2025-05-30 12:39:08,092 basehttp 7460 12780 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+INFO 2025-05-30 12:39:08,109 basehttp 7460 10780 "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+INFO 2025-05-30 12:39:08,115 basehttp 7460 12180 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+INFO 2025-05-30 12:39:08,121 basehttp 7460 6260 "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2025-05-30 12:39:08,127 basehttp 7460 12980 "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2025-05-30 12:39:08,150 basehttp 7460 10780 "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+INFO 2025-05-30 12:39:08,168 basehttp 7460 12980 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+INFO 2025-05-30 12:39:08,195 basehttp 7460 12980 "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2025-05-30 12:39:08,211 basehttp 7460 4052 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9777
+INFO 2025-05-30 12:39:08,315 basehttp 7460 4052 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2025-05-30 12:39:08,317 basehttp 7460 12980 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+WARNING 2025-05-30 12:39:12,325 log 7460 12980 Not Found: /serviceworker.js
+WARNING 2025-05-30 12:39:12,331 basehttp 7460 12980 "GET /serviceworker.js HTTP/1.1" 404 4939
+WARNING 2025-05-30 12:39:56,892 log 7460 12980 Not Found: /serviceworker.js
+WARNING 2025-05-30 12:39:56,893 basehttp 7460 12980 "GET /serviceworker.js HTTP/1.1" 404 4939
+WARNING 2025-09-12 22:20:46,456 log 19 130557055339392 Not Found: /favicon.ico
+INFO 2025-09-12 22:32:41,385 autoreload 5840 14440 Watching for file changes with StatReloader
+INFO 2025-09-12 22:33:01,397 basehttp 5840 3524 "GET / HTTP/1.1" 302 0
+INFO 2025-09-12 22:33:01,734 basehttp 5840 3524 "GET /swagger/ HTTP/1.1" 200 2250
+INFO 2025-09-12 22:33:02,505 basehttp 5840 3524 "GET /static/drf-yasg/style.css HTTP/1.1" 200 1047
+INFO 2025-09-12 22:33:02,762 basehttp 5840 8844 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 200 2093
+INFO 2025-09-12 22:33:02,792 basehttp 5840 8684 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 200 56904
+INFO 2025-09-12 22:33:02,844 basehttp 5840 7340 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 200 1046583
+INFO 2025-09-12 22:33:02,850 basehttp 5840 3524 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 200 15480
+INFO 2025-09-12 22:33:02,879 basehttp 5840 2988 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 200 145206
+INFO 2025-09-12 22:33:03,080 basehttp 5840 980 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 200 322863
+INFO 2025-09-12 22:33:03,847 basehttp 5840 2988 "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 200 628
+INFO 2025-09-12 22:33:03,906 basehttp 5840 980 "GET /swagger/?format=openapi HTTP/1.1" 200 36646
+INFO 2025-09-12 22:35:22,878 basehttp 5840 8588 "GET /admin HTTP/1.1" 301 0
+INFO 2025-09-12 22:35:22,915 basehttp 5840 4520 "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-09-12 22:35:23,278 basehttp 5840 4520 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4200
+INFO 2025-09-12 22:35:23,498 basehttp 5840 4520 "GET /static/admin/css/base.css HTTP/1.1" 200 22120
+INFO 2025-09-12 22:35:23,515 basehttp 5840 12292 "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2808
+INFO 2025-09-12 22:35:23,539 basehttp 5840 10120 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+INFO 2025-09-12 22:35:23,572 basehttp 5840 14424 "GET /static/admin/css/login.css HTTP/1.1" 200 951
+INFO 2025-09-12 22:35:23,574 basehttp 5840 2376 "GET /static/admin/css/responsive.css HTTP/1.1" 200 16565
+INFO 2025-09-12 22:35:23,647 basehttp 5840 3560 "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+INFO 2025-09-12 22:35:23,672 basehttp 5840 2376 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+WARNING 2025-09-12 22:35:23,853 log 5840 2376 Not Found: /favicon.ico
+WARNING 2025-09-12 22:35:23,857 basehttp 5840 2376 "GET /favicon.ico HTTP/1.1" 404 4924
+INFO 2025-09-12 22:35:43,682 basehttp 5840 15228 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-09-12 22:35:45,631 basehttp 5840 15228 "GET /admin/ HTTP/1.1" 200 15278
+INFO 2025-09-12 22:35:45,745 basehttp 5840 15228 "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2025-09-12 22:35:45,910 basehttp 5840 3872 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2025-09-12 22:35:45,912 basehttp 5840 15228 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2025-09-12 22:36:06,978 basehttp 5840 15228 "GET /admin/categories/category/ HTTP/1.1" 200 23511
+INFO 2025-09-12 22:36:07,058 basehttp 5840 15228 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-09-12 22:36:07,089 basehttp 5840 3872 "GET /static/admin/css/changelists.css HTTP/1.1" 200 6878
+INFO 2025-09-12 22:36:07,098 basehttp 5840 3872 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-09-12 22:36:07,122 basehttp 5840 3872 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-09-12 22:36:07,142 basehttp 5840 10124 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-09-12 22:36:07,172 basehttp 5840 15228 "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+INFO 2025-09-12 22:36:07,204 basehttp 5840 13804 "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2025-09-12 22:36:07,318 basehttp 5840 3872 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9777
+INFO 2025-09-12 22:36:07,324 basehttp 5840 10124 "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+INFO 2025-09-12 22:36:07,422 basehttp 5840 8768 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+INFO 2025-09-12 22:36:07,423 basehttp 5840 15228 "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2025-09-12 22:36:07,436 basehttp 5840 10124 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-09-12 22:36:07,451 basehttp 5840 13804 "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2025-09-12 22:36:07,506 basehttp 5840 15228 "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+INFO 2025-09-12 22:36:07,766 basehttp 5840 3872 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+INFO 2025-09-12 22:36:07,876 basehttp 5840 3872 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-09-12 22:36:08,001 basehttp 5840 3872 "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2025-09-12 22:36:08,793 basehttp 5840 4128 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-12 22:36:08,995 basehttp 5840 4128 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2025-09-12 22:36:09,035 basehttp 5840 3872 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+INFO 2025-09-12 22:36:09,040 basehttp 5840 15228 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+INFO 2025-09-12 22:41:09,110 basehttp 5840 15228 "GET /admin/auth/user/ HTTP/1.1" 200 19991
+INFO 2025-09-12 22:41:09,200 basehttp 5840 15228 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-09-12 22:41:09,224 basehttp 5840 15228 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-09-12 22:41:09,231 basehttp 5840 15228 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2025-09-12 22:41:09,247 basehttp 5840 2284 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-09-12 22:41:09,248 basehttp 5840 15228 "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2025-09-12 22:41:09,263 basehttp 5840 15228 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2025-09-12 22:41:09,264 basehttp 5840 3764 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-09-12 22:41:09,264 basehttp 5840 2284 "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2025-09-12 22:41:09,287 basehttp 5840 3764 "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2025-09-12 22:41:09,291 basehttp 5840 15228 "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2025-09-12 22:41:09,297 basehttp 5840 2284 "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2025-09-12 22:41:09,297 basehttp 5840 1456 "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+INFO 2025-09-12 22:41:09,305 basehttp 5840 3764 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2025-09-12 22:41:09,307 basehttp 5840 12964 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-09-12 22:41:09,333 basehttp 5840 1456 "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+INFO 2025-09-12 22:41:09,351 basehttp 5840 2284 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+INFO 2025-09-12 22:41:09,381 basehttp 5840 1456 "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 560
+INFO 2025-09-12 22:41:09,389 basehttp 5840 1456 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-09-12 22:41:09,397 basehttp 5840 1456 "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+INFO 2025-09-12 22:41:10,968 basehttp 5840 7332 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-12 22:41:11,080 basehttp 5840 7332 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2025-09-12 22:41:11,080 basehttp 5840 1456 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+INFO 2025-09-12 22:41:11,087 basehttp 5840 1456 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 304 0
+INFO 2025-09-12 22:41:11,096 basehttp 5840 7332 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+INFO 2025-09-12 23:14:25,505 autoreload 5840 14440 C:\Users\anton\Documents\Projects\Unzipped\savannah-backend-assessment\apps\analytics\views.py changed, reloading.
+INFO 2025-09-12 23:14:30,007 autoreload 12164 15612 Watching for file changes with StatReloader
+INFO 2025-09-12 23:14:39,458 autoreload 12164 15612 C:\Users\anton\Documents\Projects\Unzipped\savannah-backend-assessment\apps\analytics\views.py changed, reloading.
+INFO 2025-09-12 23:14:43,278 autoreload 404 3840 Watching for file changes with StatReloader
+INFO 2025-09-12 23:14:57,111 autoreload 404 3840 C:\Users\anton\Documents\Projects\Unzipped\savannah-backend-assessment\apps\core\views.py changed, reloading.
+INFO 2025-09-12 23:15:00,404 autoreload 2748 5220 Watching for file changes with StatReloader
+INFO 2025-09-12 23:15:16,443 autoreload 2748 5220 C:\Users\anton\Documents\Projects\Unzipped\savannah-backend-assessment\apps\core\views.py changed, reloading.
+INFO 2025-09-12 23:15:21,068 autoreload 15476 9784 Watching for file changes with StatReloader
+INFO 2025-09-12 23:15:24,147 autoreload 15476 9784 C:\Users\anton\Documents\Projects\Unzipped\savannah-backend-assessment\apps\core\views.py changed, reloading.
+INFO 2025-09-12 23:39:21,639 autoreload 4816 2972 Watching for file changes with StatReloader
+INFO 2025-09-12 23:41:58,222 basehttp 4816 15788 "GET / HTTP/1.1" 302 0
+INFO 2025-09-12 23:41:58,317 basehttp 4816 15788 "GET /swagger/ HTTP/1.1" 200 2243
+INFO 2025-09-12 23:41:58,992 basehttp 4816 16016 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 200 145206
+INFO 2025-09-12 23:41:58,999 basehttp 4816 16016 "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 200 15480
+INFO 2025-09-12 23:41:59,002 basehttp 4816 15788 "GET /static/drf-yasg/style.css HTTP/1.1" 200 1047
+INFO 2025-09-12 23:41:59,034 basehttp 4816 2524 "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 200 2093
+INFO 2025-09-12 23:41:59,060 basehttp 4816 8832 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 200 1046583
+INFO 2025-09-12 23:41:59,065 basehttp 4816 16232 "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 200 322863
+INFO 2025-09-12 23:41:59,087 basehttp 4816 16008 "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 200 56904
+INFO 2025-09-12 23:41:59,643 basehttp 4816 8832 "GET /swagger/?format=openapi HTTP/1.1" 200 36625
+INFO 2025-09-12 23:41:59,644 basehttp 4816 16008 "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 200 628
+INFO 2025-09-12 23:42:39,359 basehttp 4816 5828 "GET /admin/auth/user/ HTTP/1.1" 302 0
+INFO 2025-09-12 23:42:39,454 basehttp 4816 5828 "GET /admin/login/?next=/admin/auth/user/ HTTP/1.1" 200 4206
+INFO 2025-09-12 23:42:39,557 basehttp 4816 5828 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-09-12 23:42:39,558 basehttp 4816 10404 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-09-12 23:42:39,610 basehttp 4816 9628 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-09-12 23:42:39,645 basehttp 4816 8232 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-09-12 23:42:39,654 basehttp 4816 14472 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-09-12 23:42:39,662 basehttp 4816 11392 "GET /static/admin/css/login.css HTTP/1.1" 304 0
+INFO 2025-09-12 23:42:39,725 basehttp 4816 11392 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-09-12 23:43:00,213 basehttp 4816 11392 "POST /admin/login/?next=/admin/auth/user/ HTTP/1.1" 302 0
+INFO 2025-09-12 23:43:02,794 basehttp 4816 11392 "GET /admin/auth/user/ HTTP/1.1" 200 19977
+INFO 2025-09-12 23:43:02,875 basehttp 4816 11392 "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+INFO 2025-09-12 23:43:02,895 basehttp 4816 8232 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2025-09-12 23:43:02,896 basehttp 4816 9628 "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2025-09-12 23:43:02,897 basehttp 4816 10404 "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2025-09-12 23:43:02,898 basehttp 4816 5828 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2025-09-12 23:43:02,908 basehttp 4816 11392 "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2025-09-12 23:43:02,909 basehttp 4816 8232 "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2025-09-12 23:43:02,910 basehttp 4816 9628 "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2025-09-12 23:43:02,916 basehttp 4816 10404 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2025-09-12 23:43:02,941 basehttp 4816 10404 "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+INFO 2025-09-12 23:43:02,953 basehttp 4816 10404 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+INFO 2025-09-12 23:43:02,961 basehttp 4816 10404 "GET /static/admin/img/icon-no.svg HTTP/1.1" 304 0
+INFO 2025-09-12 23:43:02,975 basehttp 4816 10404 "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+INFO 2025-09-12 23:43:04,532 basehttp 4816 14472 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-12 23:43:04,664 basehttp 4816 14472 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2025-09-12 23:43:04,715 basehttp 4816 14472 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+INFO 2025-09-12 23:43:04,722 basehttp 4816 9628 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+INFO 2025-09-12 23:43:04,722 basehttp 4816 10404 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 304 0
+INFO 2025-09-12 23:43:25,925 basehttp 4816 10404 "GET /admin/auth/user/ HTTP/1.1" 200 19977
+INFO 2025-09-12 23:43:27,685 basehttp 4816 10404 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-12 23:43:34,554 basehttp 4816 10404 "GET /admin/auth/user/add/ HTTP/1.1" 200 16542
+INFO 2025-09-12 23:43:34,665 basehttp 4816 9628 "GET /static/admin/css/unusable_password_field.css HTTP/1.1" 200 663
+INFO 2025-09-12 23:43:34,673 basehttp 4816 10404 "GET /static/admin/css/forms.css HTTP/1.1" 200 8525
+INFO 2025-09-12 23:43:34,695 basehttp 4816 14472 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2025-09-12 23:43:34,731 basehttp 4816 10404 "GET /static/admin/css/widgets.css HTTP/1.1" 200 11991
+INFO 2025-09-12 23:43:34,817 basehttp 4816 10404 "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2025-09-12 23:43:34,875 basehttp 4816 10404 "GET /static/admin/js/unusable_password_field.js HTTP/1.1" 200 1480
+INFO 2025-09-12 23:43:36,389 basehttp 4816 8232 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-12 23:44:21,197 basehttp 4816 8232 "POST /admin/auth/user/add/ HTTP/1.1" 200 16996
+INFO 2025-09-12 23:44:22,943 basehttp 4816 8232 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-12 23:45:01,819 basehttp 4816 8232 "POST /admin/auth/user/add/ HTTP/1.1" 302 0
+INFO 2025-09-12 23:45:06,092 basehttp 4816 8232 "GET /admin/auth/user/11/change/ HTTP/1.1" 200 31947
+INFO 2025-09-12 23:45:06,241 basehttp 4816 8232 "GET /static/admin/js/calendar.js HTTP/1.1" 200 9141
+INFO 2025-09-12 23:45:06,252 basehttp 4816 14472 "GET /static/admin/js/SelectBox.js HTTP/1.1" 200 4530
+INFO 2025-09-12 23:45:06,254 basehttp 4816 10404 "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19319
+INFO 2025-09-12 23:45:06,283 basehttp 4816 9628 "GET /static/admin/js/SelectFilter2.js HTTP/1.1" 200 15709
+INFO 2025-09-12 23:45:07,915 basehttp 4816 11392 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-12 23:45:08,109 basehttp 4816 8232 "GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+INFO 2025-09-12 23:45:08,111 basehttp 4816 9628 "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+INFO 2025-09-12 23:45:08,112 basehttp 4816 11392 "GET /static/admin/img/selector-icons.svg HTTP/1.1" 200 3291
+INFO 2025-09-12 23:45:53,781 basehttp 4816 11392 "POST /admin/logout/ HTTP/1.1" 200 3581
+INFO 2025-09-12 23:46:00,214 basehttp 4816 11392 "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-09-12 23:46:00,236 basehttp 4816 11392 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4186
+INFO 2025-09-12 23:46:17,929 basehttp 4816 11392 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4354
+INFO 2025-09-12 23:46:43,843 basehttp 4816 11392 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4354
+INFO 2025-09-12 23:47:25,789 basehttp 4816 11392 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-09-12 23:47:27,735 basehttp 4816 11392 "GET /admin/ HTTP/1.1" 200 15231
+INFO 2025-09-12 23:47:27,809 basehttp 4816 11392 "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+INFO 2025-09-12 23:47:27,859 basehttp 4816 11392 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0

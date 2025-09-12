@@ -1,0 +1,7 @@
+=== Setup completed successfully! ===
+Next steps:
+1. Run: python manage.py runserver
+2. Visit: http://127.0.0.1:8000/admin/
+3. Login with: admin / admin123
+4. API docs: http://127.0.0.1:8000/api/docs/
+5. Test customer login: customer1 / customer123

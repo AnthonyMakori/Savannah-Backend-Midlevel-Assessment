@@ -1,0 +1,70 @@
+# MySQL-specific values for Helm chart
+replicaCount: 1
+
+image:
+  repository: store-backend
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 8000
+
+ingress:
+  enabled: true
+  className: "nginx"
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+  hosts:
+    - host: store-api.example.com
+      paths:
+        - path: /
+          pathType: Prefix
+
+resources:
+  limits:
+    cpu: 500m
+    memory: 512Mi
+  requests:
+    cpu: 100m
+    memory: 256Mi
+
+# MySQL configuration
+mysql:
+  enabled: true
+  auth:
+    rootPassword: "rootpassword"
+    database: "store"
+    username: "store_user"
+    password: "store_password"
+  primary:
+    persistence:
+      enabled: true
+      size: 8Gi
+
+env:
+  - name: DEBUG
+    value: "False"
+  - name: ALLOWED_HOSTS
+    value: "store-api.example.com,localhost,127.0.0.1"
+  - name: DB_NAME
+    value: "store"
+  - name: DB_USER
+    value: "store_user"
+  - name: DB_PASSWORD
+    valueFrom:
+      secretKeyRef:
+        name: mysql-secret
+        key: mysql-password
+  - name: DB_HOST
+    value: "mysql"
+  - name: DB_PORT
+    value: "3306"
+  - name: SECRET_KEY
+    valueFrom:
+      secretKeyRef:
+        name: store-secrets
+        key: secret-key
+  # ... other environment variables remain the same
