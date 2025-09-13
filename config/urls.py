@@ -51,7 +51,7 @@ schema_view = get_schema_view(
         ## Support
         For support, please contact: anthonymakori2@gmail.com
         """,
-        terms_of_service="https://cynthia-online-store.com/terms/",
+        terms_of_service="https://Anthony-store.com/terms/",
         contact=openapi.Contact(email="anthonymakori2@gmail.com"),
         license=openapi.License(name="MIT License"),
     ),

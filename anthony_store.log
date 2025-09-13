@@ -265,3 +265,236 @@ INFO 2025-09-12 23:47:25,789 basehttp 4816 11392 "POST /admin/login/?next=/admin
 INFO 2025-09-12 23:47:27,735 basehttp 4816 11392 "GET /admin/ HTTP/1.1" 200 15231
 INFO 2025-09-12 23:47:27,809 basehttp 4816 11392 "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
 INFO 2025-09-12 23:47:27,859 basehttp 4816 11392 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+INFO 2025-09-13 00:05:10,618 basehttp 4816 7064 "GET /admin/orders/order/17/change/ HTTP/1.1" 200 26710
+INFO 2025-09-13 00:05:10,689 basehttp 4816 7064 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-09-13 00:05:10,728 basehttp 4816 5200 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-09-13 00:05:10,737 basehttp 4816 7880 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-09-13 00:05:10,738 basehttp 4816 5200 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-09-13 00:05:10,746 basehttp 4816 7880 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2025-09-13 00:05:10,788 basehttp 4816 3100 "GET /static/admin/css/forms.css HTTP/1.1" 304 0
+INFO 2025-09-13 00:05:10,799 basehttp 4816 7332 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-09-13 00:05:10,800 basehttp 4816 16148 "GET /static/admin/js/inlines.js HTTP/1.1" 200 15628
+INFO 2025-09-13 00:05:10,801 basehttp 4816 7880 "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2025-09-13 00:05:10,801 basehttp 4816 3100 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2025-09-13 00:05:10,802 basehttp 4816 5200 "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2025-09-13 00:05:10,814 basehttp 4816 7332 "GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+INFO 2025-09-13 00:05:10,818 basehttp 4816 16148 "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2025-09-13 00:05:10,822 basehttp 4816 7880 "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2025-09-13 00:05:10,822 basehttp 4816 3100 "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2025-09-13 00:05:10,831 basehttp 4816 5200 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2025-09-13 00:05:10,840 basehttp 4816 5200 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+INFO 2025-09-13 00:05:10,852 basehttp 4816 5200 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-09-13 00:05:10,864 basehttp 4816 5200 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+INFO 2025-09-13 00:05:10,888 basehttp 4816 5200 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2025-09-13 00:05:10,901 basehttp 4816 5200 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+INFO 2025-09-13 00:05:10,951 basehttp 4816 5200 "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+INFO 2025-09-13 00:05:12,348 basehttp 4816 7064 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-13 00:06:01,156 basehttp 4816 14208 "GET /admin/authtoken/tokenproxy/ HTTP/1.1" 200 15476
+INFO 2025-09-13 00:06:01,252 basehttp 4816 14208 "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+INFO 2025-09-13 00:06:01,317 basehttp 4816 14208 "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+INFO 2025-09-13 00:06:01,354 basehttp 4816 14208 "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+INFO 2025-09-13 00:06:01,439 basehttp 4816 14208 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+INFO 2025-09-13 00:06:01,445 basehttp 4816 3664 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 304 0
+INFO 2025-09-13 00:06:54,183 basehttp 4816 3664 "GET /admin/categories/category/ HTTP/1.1" 200 23497
+INFO 2025-09-13 00:06:55,910 basehttp 4816 3664 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-13 00:07:06,192 basehttp 4816 3664 "GET /admin/orders/order/ HTTP/1.1" 200 23010
+INFO 2025-09-13 00:07:07,937 basehttp 4816 3664 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-13 01:24:02,046 basehttp 4816 3564 "GET /admin/orders/order/ HTTP/1.1" 200 23010
+INFO 2025-09-13 02:33:39,983 basehttp 4816 16404 "GET /admin/products/product/ HTTP/1.1" 200 21469
+INFO 2025-09-13 02:33:40,104 basehttp 4816 16404 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-09-13 02:33:40,105 basehttp 4816 7740 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-09-13 02:33:40,110 basehttp 4816 14436 "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+INFO 2025-09-13 02:33:40,110 basehttp 4816 6724 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-09-13 02:33:40,145 basehttp 4816 15076 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-09-13 02:33:40,160 basehttp 4816 7740 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2025-09-13 02:33:40,162 basehttp 4816 10480 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-09-13 02:33:40,196 basehttp 4816 14436 "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2025-09-13 02:33:40,202 basehttp 4816 15076 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2025-09-13 02:33:40,204 basehttp 4816 6724 "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2025-09-13 02:33:40,259 basehttp 4816 7740 "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2025-09-13 02:33:40,267 basehttp 4816 10480 "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2025-09-13 02:33:40,277 basehttp 4816 14436 "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2025-09-13 02:33:40,294 basehttp 4816 15076 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2025-09-13 02:33:40,303 basehttp 4816 10480 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+INFO 2025-09-13 02:33:40,305 basehttp 4816 14436 "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+INFO 2025-09-13 02:33:40,325 basehttp 4816 14436 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-09-13 02:33:40,345 basehttp 4816 14436 "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+INFO 2025-09-13 02:33:41,770 basehttp 4816 16404 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-13 02:33:41,856 basehttp 4816 16404 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2025-09-13 02:33:41,868 basehttp 4816 16404 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+INFO 2025-09-13 02:33:41,884 basehttp 4816 16404 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+INFO 2025-09-13 02:34:03,852 basehttp 4816 16404 "GET /admin/products/product/add/ HTTP/1.1" 200 42610
+INFO 2025-09-13 02:34:03,948 basehttp 4816 16404 "GET /static/admin/css/forms.css HTTP/1.1" 304 0
+INFO 2025-09-13 02:34:03,956 basehttp 4816 15076 "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 304 0
+INFO 2025-09-13 02:34:03,957 basehttp 4816 10480 "GET /static/admin/js/calendar.js HTTP/1.1" 304 0
+INFO 2025-09-13 02:34:03,994 basehttp 4816 15076 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+INFO 2025-09-13 02:34:04,015 basehttp 4816 10480 "GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+INFO 2025-09-13 02:34:04,033 basehttp 4816 10480 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+INFO 2025-09-13 02:34:04,265 basehttp 4816 10480 "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+INFO 2025-09-13 02:34:04,275 basehttp 4816 10480 "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+INFO 2025-09-13 02:34:05,591 basehttp 4816 14436 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-13 02:34:05,798 basehttp 4816 14436 "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 304 0
+INFO 2025-09-13 02:34:05,808 basehttp 4816 14436 "GET /static/admin/img/icon-clock.svg HTTP/1.1" 304 0
+INFO 2025-09-13 02:34:42,976 basehttp 4816 14436 "GET /admin/products/product/ HTTP/1.1" 200 21469
+INFO 2025-09-13 02:34:44,706 basehttp 4816 14436 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-13 13:15:25,832 basehttp 4816 8564 "GET /admin/auth/user/ HTTP/1.1" 200 20422
+INFO 2025-09-13 13:15:25,943 basehttp 4816 12056 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-09-13 13:15:25,943 basehttp 4816 8564 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-09-13 13:15:25,989 basehttp 4816 12056 "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2025-09-13 13:15:25,995 basehttp 4816 8564 "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2025-09-13 13:15:26,024 basehttp 4816 18372 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-09-13 13:15:26,026 basehttp 4816 6500 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-09-13 13:15:26,027 basehttp 4816 12056 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2025-09-13 13:15:26,029 basehttp 4816 1624 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-09-13 13:15:26,034 basehttp 4816 8564 "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2025-09-13 13:15:26,076 basehttp 4816 19948 "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+INFO 2025-09-13 13:15:26,077 basehttp 4816 6500 "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2025-09-13 13:15:26,088 basehttp 4816 12056 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2025-09-13 13:15:26,129 basehttp 4816 8564 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2025-09-13 13:15:26,137 basehttp 4816 6500 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+INFO 2025-09-13 13:15:26,140 basehttp 4816 1624 "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2025-09-13 13:15:26,142 basehttp 4816 12056 "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+INFO 2025-09-13 13:15:26,160 basehttp 4816 12056 "GET /static/admin/img/icon-no.svg HTTP/1.1" 304 0
+INFO 2025-09-13 13:15:26,176 basehttp 4816 12056 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-09-13 13:15:26,191 basehttp 4816 12056 "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+INFO 2025-09-13 13:15:28,132 basehttp 4816 18372 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-13 13:15:28,203 basehttp 4816 18372 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2025-09-13 13:15:28,215 basehttp 4816 18372 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+INFO 2025-09-13 13:15:28,221 basehttp 4816 18372 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 304 0
+INFO 2025-09-13 13:15:28,234 basehttp 4816 18372 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+INFO 2025-09-13 13:16:21,046 basehttp 4816 18372 "GET /admin/auth/group/add/ HTTP/1.1" 200 21707
+INFO 2025-09-13 13:16:21,159 basehttp 4816 18372 "GET /static/admin/css/forms.css HTTP/1.1" 304 0
+INFO 2025-09-13 13:16:21,161 basehttp 4816 1624 "GET /static/admin/js/SelectBox.js HTTP/1.1" 304 0
+INFO 2025-09-13 13:16:21,165 basehttp 4816 6500 "GET /static/admin/js/SelectFilter2.js HTTP/1.1" 304 0
+INFO 2025-09-13 13:16:21,170 basehttp 4816 8564 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+INFO 2025-09-13 13:16:21,206 basehttp 4816 8564 "GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+INFO 2025-09-13 13:16:21,221 basehttp 4816 8564 "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+INFO 2025-09-13 13:16:22,786 basehttp 4816 12056 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-13 13:16:22,950 basehttp 4816 12056 "GET /static/admin/img/selector-icons.svg HTTP/1.1" 304 0
+INFO 2025-09-13 13:16:29,946 basehttp 4816 12056 "GET /admin/auth/ HTTP/1.1" 200 6132
+INFO 2025-09-13 13:16:30,021 basehttp 4816 12056 "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+INFO 2025-09-13 13:16:30,048 basehttp 4816 12056 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+INFO 2025-09-13 13:16:40,230 basehttp 4816 12056 "GET /admin/auth/user/ HTTP/1.1" 200 20422
+INFO 2025-09-13 13:16:42,178 basehttp 4816 12056 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-13 13:16:53,787 basehttp 4816 12056 "GET /admin/auth/user/1/change/ HTTP/1.1" 200 31841
+INFO 2025-09-13 13:16:53,892 basehttp 4816 8564 "GET /static/admin/js/calendar.js HTTP/1.1" 304 0
+INFO 2025-09-13 13:16:53,893 basehttp 4816 6500 "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 304 0
+INFO 2025-09-13 13:16:55,512 basehttp 4816 12056 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-13 13:16:55,668 basehttp 4816 6500 "GET /static/admin/img/icon-clock.svg HTTP/1.1" 304 0
+INFO 2025-09-13 13:16:55,668 basehttp 4816 12056 "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 304 0
+INFO 2025-09-13 13:18:02,579 basehttp 4816 6500 "POST /admin/auth/user/1/change/ HTTP/1.1" 302 0
+INFO 2025-09-13 13:18:05,072 basehttp 4816 6500 "GET /admin/auth/user/ HTTP/1.1" 200 20614
+INFO 2025-09-13 13:18:06,868 basehttp 4816 6500 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-13 13:19:22,020 basehttp 4816 6500 "GET /admin/auth/user/9/change/ HTTP/1.1" 200 31744
+INFO 2025-09-13 13:19:23,777 basehttp 4816 6500 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-13 13:20:24,376 basehttp 4816 6500 "POST /admin/auth/user/9/change/ HTTP/1.1" 302 0
+INFO 2025-09-13 13:20:26,910 basehttp 4816 6500 "GET /admin/auth/user/ HTTP/1.1" 200 20631
+INFO 2025-09-13 13:20:28,666 basehttp 4816 6500 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-13 13:21:25,898 basehttp 4816 6500 "GET /admin/auth/user/4/change/ HTTP/1.1" 200 31811
+INFO 2025-09-13 13:21:27,626 basehttp 4816 6500 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-13 13:22:24,590 basehttp 4816 6500 "POST /admin/auth/user/4/change/ HTTP/1.1" 302 0
+INFO 2025-09-13 13:22:27,183 basehttp 4816 6500 "GET /admin/auth/user/ HTTP/1.1" 200 20625
+INFO 2025-09-13 13:22:28,947 basehttp 4816 6500 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-13 13:22:37,547 basehttp 4816 6500 "GET /admin/auth/user/4/change/ HTTP/1.1" 200 31802
+INFO 2025-09-13 13:22:39,273 basehttp 4816 6500 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-13 13:22:43,481 basehttp 4816 6500 "GET /static/admin/img/calendar-icons.svg HTTP/1.1" 200 2455
+INFO 2025-09-13 13:23:47,317 basehttp 4816 6500 "POST /admin/auth/user/4/change/ HTTP/1.1" 302 0
+INFO 2025-09-13 13:23:49,844 basehttp 4816 6500 "GET /admin/auth/user/ HTTP/1.1" 200 20625
+INFO 2025-09-13 13:23:51,657 basehttp 4816 6500 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-13 13:24:03,767 basehttp 4816 6500 "GET /admin/auth/user/8/change/ HTTP/1.1" 200 31827
+INFO 2025-09-13 13:24:05,517 basehttp 4816 6500 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-13 13:24:14,639 basehttp 4816 6500 "GET /admin/auth/user/8/delete/ HTTP/1.1" 200 12154
+INFO 2025-09-13 13:24:14,826 basehttp 4816 6500 "GET /static/admin/js/cancel.js HTTP/1.1" 200 884
+INFO 2025-09-13 13:24:28,990 basehttp 4816 6500 "POST /admin/auth/user/8/delete/ HTTP/1.1" 302 0
+INFO 2025-09-13 13:24:31,575 basehttp 4816 6500 "GET /admin/auth/user/ HTTP/1.1" 200 20090
+INFO 2025-09-13 13:24:33,330 basehttp 4816 6500 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-13 13:24:48,694 basehttp 4816 6500 "GET /admin/auth/user/7/change/ HTTP/1.1" 200 31802
+INFO 2025-09-13 13:24:50,440 basehttp 4816 6500 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-13 13:25:02,599 basehttp 4816 6500 "GET /admin/auth/user/7/delete/ HTTP/1.1" 200 12605
+INFO 2025-09-13 13:25:12,553 basehttp 4816 6500 "POST /admin/auth/user/7/delete/ HTTP/1.1" 302 0
+INFO 2025-09-13 13:25:15,294 basehttp 4816 6500 "GET /admin/auth/user/ HTTP/1.1" 200 19609
+INFO 2025-09-13 13:25:17,009 basehttp 4816 6500 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-13 13:25:26,495 basehttp 4816 6500 - Broken pipe from ('127.0.0.1', 58177)
+INFO 2025-09-13 13:25:30,230 basehttp 4816 15760 "GET /admin/auth/user/6/change/ HTTP/1.1" 200 31790
+INFO 2025-09-13 13:25:31,943 basehttp 4816 15760 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-13 13:25:45,997 basehttp 4816 15760 "GET /admin/auth/user/6/delete/ HTTP/1.1" 200 13088
+INFO 2025-09-13 13:25:57,710 basehttp 4816 15760 "POST /admin/auth/user/6/delete/ HTTP/1.1" 302 0
+INFO 2025-09-13 13:26:00,208 basehttp 4816 15760 "GET /admin/auth/user/ HTTP/1.1" 200 19137
+INFO 2025-09-13 13:26:01,948 basehttp 4816 15760 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-13 13:26:16,311 basehttp 4816 15760 "GET /admin/auth/user/11/change/ HTTP/1.1" 200 31726
+INFO 2025-09-13 13:26:18,032 basehttp 4816 15760 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-13 13:27:44,959 basehttp 4816 15760 "POST /admin/auth/user/11/change/ HTTP/1.1" 302 0
+INFO 2025-09-13 13:27:47,457 basehttp 4816 15760 "GET /admin/auth/user/ HTTP/1.1" 200 19204
+INFO 2025-09-13 13:27:49,230 basehttp 4816 15760 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-13 13:28:29,615 basehttp 4816 15760 "GET /admin/auth/user/5/change/ HTTP/1.1" 200 31808
+INFO 2025-09-13 13:28:31,364 basehttp 4816 15760 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-13 13:29:02,430 basehttp 4816 15760 "POST /admin/auth/user/5/change/ HTTP/1.1" 302 0
+INFO 2025-09-13 13:29:04,931 basehttp 4816 15760 "GET /admin/auth/user/ HTTP/1.1" 200 19194
+INFO 2025-09-13 13:29:06,684 basehttp 4816 15760 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-13 13:29:16,281 basehttp 4816 15760 "GET /admin/auth/user/5/change/ HTTP/1.1" 200 31799
+INFO 2025-09-13 13:29:18,030 basehttp 4816 15760 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-13 13:29:28,460 basehttp 4816 15760 "POST /admin/auth/user/5/change/ HTTP/1.1" 302 0
+INFO 2025-09-13 13:29:31,002 basehttp 4816 15760 "GET /admin/auth/user/ HTTP/1.1" 200 19194
+INFO 2025-09-13 13:29:32,783 basehttp 4816 15760 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-13 13:30:37,045 basehttp 4816 15760 "POST /admin/logout/ HTTP/1.1" 200 3581
+INFO 2025-09-13 13:30:39,999 basehttp 4816 15760 "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-09-13 13:30:40,029 basehttp 4816 15760 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4186
+INFO 2025-09-13 13:30:40,092 basehttp 4816 15760 "GET /static/admin/css/login.css HTTP/1.1" 304 0
+INFO 2025-09-13 13:31:32,432 basehttp 4816 15760 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4358
+INFO 2025-09-13 13:32:19,921 basehttp 4816 15760 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4358
+WARNING 2025-09-13 13:32:54,822 log 4816 15760 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-09-13 13:32:54,823 basehttp 4816 15760 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5035
+INFO 2025-09-13 13:33:03,377 basehttp 4816 15760 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4358
+WARNING 2025-09-13 13:33:03,594 log 4816 15760 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-09-13 13:33:03,603 basehttp 4816 15760 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5035
+INFO 2025-09-13 13:33:14,838 basehttp 4816 15760 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4358
+WARNING 2025-09-13 13:33:14,938 log 4816 15760 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-09-13 13:33:14,952 basehttp 4816 15760 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5035
+INFO 2025-09-13 13:34:09,249 basehttp 4816 15760 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-09-13 13:34:11,172 basehttp 4816 15760 "GET /admin/ HTTP/1.1" 200 14929
+INFO 2025-09-13 13:34:11,470 basehttp 4816 15944 "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 304 0
+WARNING 2025-09-13 13:34:12,950 log 4816 15760 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-09-13 13:34:12,951 basehttp 4816 15760 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5035
+INFO 2025-09-13 13:35:29,921 basehttp 4816 15760 "GET /admin/categories/category/ HTTP/1.1" 200 23497
+INFO 2025-09-13 13:35:31,667 basehttp 4816 15760 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-13 13:35:38,166 basehttp 4816 15760 "GET /admin/ HTTP/1.1" 200 14929
+INFO 2025-09-13 13:38:20,126 autoreload 4816 2972 C:\Users\anton\Documents\Projects\Unzipped\savannah-backend-assessment\config\urls.py changed, reloading.
+INFO 2025-09-13 13:38:26,894 autoreload 16704 19276 Watching for file changes with StatReloader
+INFO 2025-09-13 13:38:34,708 autoreload 16704 19276 C:\Users\anton\Documents\Projects\Unzipped\savannah-backend-assessment\config\urls.py changed, reloading.
+INFO 2025-09-13 13:38:37,614 autoreload 21280 19204 Watching for file changes with StatReloader
+INFO 2025-09-13 13:38:44,408 autoreload 21280 19204 C:\Users\anton\Documents\Projects\Unzipped\savannah-backend-assessment\config\urls.py changed, reloading.
+INFO 2025-09-13 13:38:47,930 autoreload 21060 17468 Watching for file changes with StatReloader
+INFO 2025-09-13 13:44:22,094 autoreload 21060 17468 C:\Users\anton\Documents\Projects\Unzipped\savannah-backend-assessment\config\settings.py changed, reloading.
+INFO 2025-09-13 13:44:25,700 autoreload 6768 19304 Watching for file changes with StatReloader
+INFO 2025-09-13 13:44:31,127 autoreload 6768 19304 C:\Users\anton\Documents\Projects\Unzipped\savannah-backend-assessment\config\settings.py changed, reloading.
+INFO 2025-09-13 13:44:34,522 autoreload 6072 18472 Watching for file changes with StatReloader
+INFO 2025-09-13 13:44:39,166 autoreload 6072 18472 C:\Users\anton\Documents\Projects\Unzipped\savannah-backend-assessment\config\settings.py changed, reloading.
+INFO 2025-09-13 13:44:42,228 autoreload 19700 13284 Watching for file changes with StatReloader
+INFO 2025-09-13 13:48:43,114 autoreload 19700 13284 C:\Users\anton\Documents\Projects\Unzipped\savannah-backend-assessment\config\settings.py changed, reloading.
+INFO 2025-09-13 13:48:46,665 autoreload 19476 19664 Watching for file changes with StatReloader
+INFO 2025-09-13 13:49:05,334 autoreload 19476 19664 C:\Users\anton\Documents\Projects\Unzipped\savannah-backend-assessment\config\settings.py changed, reloading.
+INFO 2025-09-13 13:49:08,092 autoreload 8300 6108 Watching for file changes with StatReloader
+INFO 2025-09-13 13:49:24,980 autoreload 8300 6108 C:\Users\anton\Documents\Projects\Unzipped\savannah-backend-assessment\config\settings.py changed, reloading.
+INFO 2025-09-13 13:49:28,423 autoreload 20916 7900 Watching for file changes with StatReloader
+INFO 2025-09-13 14:16:13,662 autoreload 20916 7900 C:\Users\anton\Documents\Projects\Unzipped\savannah-backend-assessment\config\settings.py changed, reloading.
+INFO 2025-09-13 14:16:17,699 autoreload 16552 15536 Watching for file changes with StatReloader
+INFO 2025-09-13 14:16:21,124 autoreload 16552 15536 C:\Users\anton\Documents\Projects\Unzipped\savannah-backend-assessment\config\settings.py changed, reloading.
+INFO 2025-09-13 14:16:24,325 autoreload 19560 2312 Watching for file changes with StatReloader
+INFO 2025-09-13 14:16:41,602 autoreload 19560 2312 C:\Users\anton\Documents\Projects\Unzipped\savannah-backend-assessment\config\settings.py changed, reloading.
+INFO 2025-09-13 14:16:44,294 autoreload 14028 14056 Watching for file changes with StatReloader
+INFO 2025-09-13 14:16:53,232 autoreload 14028 14056 C:\Users\anton\Documents\Projects\Unzipped\savannah-backend-assessment\config\settings.py changed, reloading.
+INFO 2025-09-13 14:16:56,298 autoreload 16232 4320 Watching for file changes with StatReloader
+INFO 2025-09-13 14:17:05,827 autoreload 16232 4320 C:\Users\anton\Documents\Projects\Unzipped\savannah-backend-assessment\config\settings.py changed, reloading.
+INFO 2025-09-13 14:17:08,858 autoreload 2712 12964 Watching for file changes with StatReloader
+INFO 2025-09-13 14:17:18,289 autoreload 2712 12964 C:\Users\anton\Documents\Projects\Unzipped\savannah-backend-assessment\config\settings.py changed, reloading.
+INFO 2025-09-13 14:17:21,628 autoreload 14440 19204 Watching for file changes with StatReloader
+INFO 2025-09-13 14:17:26,434 autoreload 14440 19204 C:\Users\anton\Documents\Projects\Unzipped\savannah-backend-assessment\config\settings.py changed, reloading.
+INFO 2025-09-13 14:17:29,509 autoreload 21072 21240 Watching for file changes with StatReloader
+INFO 2025-09-13 14:17:33,902 autoreload 21072 21240 C:\Users\anton\Documents\Projects\Unzipped\savannah-backend-assessment\config\settings.py changed, reloading.
+INFO 2025-09-13 14:17:37,134 autoreload 20856 17820 Watching for file changes with StatReloader
+INFO 2025-09-13 14:18:19,666 autoreload 20856 17820 C:\Users\anton\Documents\Projects\Unzipped\savannah-backend-assessment\config\settings.py changed, reloading.
+INFO 2025-09-13 14:18:22,825 autoreload 20136 20160 Watching for file changes with StatReloader
+INFO 2025-09-13 14:18:37,767 autoreload 20136 20160 C:\Users\anton\Documents\Projects\Unzipped\savannah-backend-assessment\config\settings.py changed, reloading.
+INFO 2025-09-13 14:18:41,257 autoreload 16636 20312 Watching for file changes with StatReloader
+INFO 2025-09-13 14:18:47,080 autoreload 16636 20312 C:\Users\anton\Documents\Projects\Unzipped\savannah-backend-assessment\config\settings.py changed, reloading.
+INFO 2025-09-13 14:18:49,909 autoreload 17504 10424 Watching for file changes with StatReloader

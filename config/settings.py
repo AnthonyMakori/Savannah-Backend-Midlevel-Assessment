@@ -1,18 +1,12 @@
 import os
 from pathlib import Path
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-key-for-development-only')
 
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-
-# ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'localhost,127.0.0.1,cynthia-store.up.railway.app').split(',')
 
 ALLOWED_HOSTS = ['.up.railway.app','localhost','127.0.0.1']
 
@@ -20,7 +14,6 @@ CSRF_TRUSTED_ORIGINS = [
     'https://cynthia-store.up.railway.app',
 ]
 
-# Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -29,7 +22,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     
-    # Third-party apps
     'rest_framework',
     'rest_framework.authtoken',
     'mozilla_django_oidc',
@@ -38,7 +30,6 @@ INSTALLED_APPS = [
     'corsheaders',
     'django_extensions',
     
-    # Project apps
     'apps.authentication',
     'apps.customers',
     'apps.categories',
@@ -82,7 +73,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
-# Database configuration with PostgreSQL as primary and MySQL as option
 DATABASE_ENGINE = os.environ.get('DATABASE_ENGINE', 'postgresql')
 
 if DATABASE_ENGINE == 'postgresql':
@@ -114,7 +104,7 @@ elif DATABASE_ENGINE == 'mysql':
             },
         }
     }
-else:  # SQLite for development
+else: 
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
@@ -122,7 +112,6 @@ else:  # SQLite for development
         }
     }
 
-# Password validation
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -155,10 +144,8 @@ STATICFILES_DIRS = [
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-# Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# REST Framework settings
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.TokenAuthentication',
@@ -182,20 +169,18 @@ REST_FRAMEWORK = {
     'EXCEPTION_HANDLER': 'apps.core.exceptions.custom_exception_handler',
 }
 
-# CORS settings
 CORS_ALLOWED_ORIGINS = [
     "https://cynthia-store.up.railway.app",
     "http://localhost:3000",
     "http://127.0.0.1:3000",
     "http://localhost:8080",
     "http://127.0.0.1:8080",
-    "https://cynthia-online-store.vercel.app",
-    "https://cynthia-online-store.com",
+    "https://anthony-store.vercel.app",
+    "https://anthony-store.com",
 ]
 
 CORS_ALLOW_CREDENTIALS = True
 
-# OIDC Configuration
 AUTHENTICATION_BACKENDS = [
     'mozilla_django_oidc.auth.OIDCAuthenticationBackend',
     'django.contrib.auth.backends.ModelBackend',
@@ -216,10 +201,10 @@ EMAIL_PORT = int(os.environ.get('EMAIL_PORT', 587))
 EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS', 'True') == 'True'
 EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER', 'anthonymakori2@gmail.com')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD', '')
-DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL', 'noreply@cynthia-online-store.com')
+DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL', 'noreply@anthony-store.com')
 
 # Africa's Talking SMS Configuration
-AFRICASTALKING_USERNAME = os.environ.get('AFRICASTALKING_USERNAME', 'cynthia_store')
+AFRICASTALKING_USERNAME = os.environ.get('AFRICASTALKING_USERNAME', 'anthony_store')
 AFRICASTALKING_API_KEY = os.environ.get('AFRICASTALKING_API_KEY', '')
 AFRICASTALKING_SENDER = os.environ.get('AFRICASTALKING_SENDER', 'CynthiaStore')
 

@@ -48,26 +48,26 @@ class CynthiaStoreDataSetup:
                 first_name='Cynthia',
                 last_name='Samuels'
             )
-            print('✅ Superuser created for Anthony Store')
+            print(' Superuser created for Anthony Store')
             print(f'   Email: anthonymakori2@gmail.com')
             print(f'   Phone: +254707497200')
             self.created_objects['users'].append(admin_user)
         else:
-            print('ℹ️  Superuser already exists')
+            print('  Superuser already exists')
     
     def create_staff_users(self):
         """Create staff users for the store"""
         staff_users = [
             {
                 'username': 'manager',
-                'email': 'manager@cynthia-online-store.com',
+                'email': 'manager-store@gmail.com',
                 'first_name': 'Store',
                 'last_name': 'Manager',
                 'is_staff': True
             },
             {
                 'username': 'sales',
-                'email': 'sales@cynthia-online-store.com',
+                'email': 'sales-store@gmail.com',
                 'first_name': 'Sales',
                 'last_name': 'Representative',
                 'is_staff': True
@@ -183,7 +183,7 @@ class CynthiaStoreDataSetup:
                 
                 self.created_objects['users'].append(user)
                 self.created_objects['customers'].append(customer)
-                print(f'✅ Customer created: {customer.full_name} ({customer.customer_type})')
+                print(f' Customer created: {customer.full_name} ({customer.customer_type})')
     
     def create_categories(self):
         """Create comprehensive category hierarchy"""

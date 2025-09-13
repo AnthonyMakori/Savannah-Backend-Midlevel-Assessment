@@ -71,7 +71,7 @@ class CynthiaStoreDeployer:
                 "static_files": True,
                 "migrations": True,
                 "fixtures": False,
-                "namespace": "cynthia-store",
+                "namespace": "anthony-store",
                 "helm_chart": "./charts/store-chart"
             },
             "github": {
@@ -440,8 +440,8 @@ class CynthiaStoreDeployer:
                 'kubectl', 'create', 'namespace', namespace
             ], check=False)
             
-            # Build and push Docker image (assuming registry is configured)
-            image_tag = f"cynthia-online-store:latest"
+            # Build and push Docker image (if registry is configured)
+            image_tag = f"anthony-store:latest"
             self.run_command(['docker', 'build', '-t', image_tag, '.'])
             
             # Deploy using Helm
@@ -575,7 +575,7 @@ class CynthiaStoreDeployer:
             
             logger.info(f"Deployment to {self.environment} completed successfully!")
             
-            # Cleanup old backups (keep last 5)
+            # Cleanup old backups 
             self.cleanup_old_backups()
             
         except Exception as e:
@@ -588,8 +588,8 @@ class CynthiaStoreDeployer:
         try:
             backups = sorted(self.backup_dir.glob('backup_*'), key=os.path.getctime)
             
-            # Keep only the last 5 backups
-            for backup in backups[:-5]:
+            # Keep only the last 7 backups
+            for backup in backups[:-7]:
                 if backup.is_dir():
                     shutil.rmtree(backup)
                 else:
