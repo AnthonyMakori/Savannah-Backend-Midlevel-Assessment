@@ -16,11 +16,9 @@ def create_category():
 
 @pytest.mark.django_db
 def test_list_categories(api_client, create_category):
-    # Create some categories
     create_category("Electronics")
     create_category("Clothing")
     
-    # Get categories
     url = reverse('category-list')
     response = api_client.get(url)
     
@@ -29,10 +27,8 @@ def test_list_categories(api_client, create_category):
 
 @pytest.mark.django_db
 def test_create_category(api_client, admin_user):
-    # Login as admin
     api_client.force_authenticate(user=admin_user)
     
-    # Create category
     url = reverse('category-list')
     data = {
         'name': 'Electronics',
@@ -46,36 +42,31 @@ def test_create_category(api_client, admin_user):
 
 @pytest.mark.django_db
 def test_nested_categories(api_client, create_category):
-    # Create nested categories
     electronics = create_category("Electronics")
     phones = create_category("Phones", parent=electronics)
     smartphones = create_category("Smartphones", parent=phones)
     
-    # Get category tree
     url = reverse('category-tree')
     response = api_client.get(url)
     
     assert response.status_code == status.HTTP_200_OK
-    assert len(response.data) == 1  # Only root category (Electronics)
+    assert len(response.data) == 1
     assert response.data[0]['name'] == 'Electronics'
-    assert len(response.data[0]['children']) == 1  # Phones
+    assert len(response.data[0]['children']) == 1
     assert response.data[0]['children'][0]['name'] == 'Phones'
-    assert len(response.data[0]['children'][0]['children']) == 1  # Smartphones
+    assert len(response.data[0]['children'][0]['children']) == 1
     assert response.data[0]['children'][0]['children'][0]['name'] == 'Smartphones'
 
 @pytest.mark.django_db
 def test_average_price(api_client, create_category, admin_user):
-    # Create categories
     electronics = create_category("Electronics")
     
-    # Create products
     from apps.products.models import Product
     Product.objects.create(name="Laptop", price=1000, category=electronics, sku="LAP001", stock=10)
     Product.objects.create(name="Phone", price=500, category=electronics, sku="PHO001", stock=20)
     
-    # Get average price
     url = reverse('category-average-price', kwargs={'slug': electronics.slug})
     response = api_client.get(url)
     
     assert response.status_code == status.HTTP_200_OK
-    assert response.data['average_price'] == 750.0  # (1000 + 500) / 2
+    assert response.data['average_price'] == 750.0

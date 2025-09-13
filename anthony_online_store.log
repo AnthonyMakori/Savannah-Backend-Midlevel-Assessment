@@ -1,0 +1,16 @@
+INFO 2025-09-14 01:35:50,332 autoreload 8040 11456 Watching for file changes with StatReloader
+INFO 2025-09-14 01:37:29,494 autoreload 8040 11456 C:\Users\anton\Desktop\savannah-backend-assessment-refined\savannah-backend-assessment\apps\orders\models.py changed, reloading.
+INFO 2025-09-14 01:37:31,811 autoreload 12972 15452 Watching for file changes with StatReloader
+INFO 2025-09-14 01:37:47,144 autoreload 12996 14036 Watching for file changes with StatReloader
+INFO 2025-09-14 01:39:05,240 autoreload 12996 14036 C:\Users\anton\Desktop\savannah-backend-assessment-refined\savannah-backend-assessment\apps\orders\signals.py changed, reloading.
+INFO 2025-09-14 01:39:07,645 autoreload 15496 1364 Watching for file changes with StatReloader
+INFO 2025-09-14 01:39:11,412 autoreload 15496 1364 C:\Users\anton\Desktop\savannah-backend-assessment-refined\savannah-backend-assessment\apps\orders\signals.py changed, reloading.
+INFO 2025-09-14 01:39:13,770 autoreload 16300 3808 Watching for file changes with StatReloader
+INFO 2025-09-14 01:39:55,595 autoreload 16300 3808 C:\Users\anton\Desktop\savannah-backend-assessment-refined\savannah-backend-assessment\apps\orders\signals.py changed, reloading.
+INFO 2025-09-14 01:39:58,677 autoreload 15468 12304 Watching for file changes with StatReloader
+INFO 2025-09-14 01:40:26,557 autoreload 15468 12304 C:\Users\anton\Desktop\savannah-backend-assessment-refined\savannah-backend-assessment\apps\orders\signals.py changed, reloading.
+INFO 2025-09-14 01:40:30,087 autoreload 15284 15296 Watching for file changes with StatReloader
+INFO 2025-09-14 01:40:54,026 autoreload 8040 8504 Watching for file changes with StatReloader
+INFO 2025-09-14 01:50:13,255 autoreload 4444 11436 Watching for file changes with StatReloader
+INFO 2025-09-14 01:55:22,384 autoreload 4444 11436 C:\Users\anton\Desktop\savannah-backend-assessment-refined\savannah-backend-assessment\config\settings.py changed, reloading.
+INFO 2025-09-14 01:56:45,161 autoreload 8036 8040 Watching for file changes with StatReloader

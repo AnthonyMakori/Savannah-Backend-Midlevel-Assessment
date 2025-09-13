@@ -11,7 +11,6 @@ class HealthCheckMiddleware:
         self.get_response = get_response
 
     def __call__(self, request):
-        # Health check endpoint
         if request.path == '/health/':
             return JsonResponse({
                 'status': 'healthy',

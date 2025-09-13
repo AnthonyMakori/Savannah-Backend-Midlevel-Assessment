@@ -4,13 +4,11 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 import uuid
 
 class Category(models.Model):
-    # Basic Information
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=100, unique=True)
     slug = models.SlugField(max_length=100, unique=True, blank=True)
     description = models.TextField(blank=True)
     
-    # Hierarchy
     parent = models.ForeignKey(
         'self', 
         on_delete=models.CASCADE, 
@@ -19,26 +17,22 @@ class Category(models.Model):
         related_name='children'
     )
     level = models.PositiveIntegerField(default=0)
-    path = models.CharField(max_length=500, blank=True)  # Materialized path for efficient queries
+    path = models.CharField(max_length=500, blank=True)
     
-    # Display and SEO
     display_name = models.CharField(max_length=100, blank=True)
     meta_title = models.CharField(max_length=200, blank=True)
     meta_description = models.TextField(max_length=500, blank=True)
     keywords = models.CharField(max_length=500, blank=True)
     
-    # Media
     image = models.ImageField(upload_to='categories/', blank=True, null=True)
     icon = models.CharField(max_length=100, blank=True, help_text="CSS class for icon")
     banner_image = models.ImageField(upload_to='categories/banners/', blank=True, null=True)
     
-    # Configuration
     is_active = models.BooleanField(default=True)
     is_featured = models.BooleanField(default=False)
     show_in_menu = models.BooleanField(default=True)
     sort_order = models.PositiveIntegerField(default=0)
     
-    # Business Rules
     commission_rate = models.DecimalField(
         max_digits=5, 
         decimal_places=2, 
@@ -52,7 +46,6 @@ class Category(models.Model):
         validators=[MinValueValidator(0), MaxValueValidator(100)]
     )
     
-    # Metadata
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     created_by = models.ForeignKey(
@@ -84,7 +77,6 @@ class Category(models.Model):
         if not self.display_name:
             self.display_name = self.name
         
-        # Calculate level and path
         if self.parent:
             self.level = self.parent.level + 1
             self.path = f"{self.parent.path}/{self.slug}" if self.parent.path else self.slug

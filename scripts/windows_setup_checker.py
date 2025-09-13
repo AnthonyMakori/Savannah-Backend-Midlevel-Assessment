@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 """
 Windows-specific setup checker for Anthony Store
 """
@@ -13,21 +12,18 @@ def check_windows_environment():
     print(" Checking Windows Environment...")
     print("=" * 50)
     
-    # Check OS
     if platform.system() != 'Windows':
         print("  This script is designed for Windows")
         return False
     
     print(f" Operating System: {platform.system()} {platform.release()}")
     
-    # Check Python
     try:
         result = subprocess.run(['python', '--version'], 
                               capture_output=True, text=True, check=True)
         python_version = result.stdout.strip()
         print(f" Python: {python_version}")
         
-        # Check Python version
         version_parts = python_version.split()[1].split('.')
         major, minor = int(version_parts[0]), int(version_parts[1])
         if major < 3 or (major == 3 and minor < 8):
@@ -39,7 +35,6 @@ def check_windows_environment():
         print("   Download from: https://www.python.org/downloads/")
         return False
     
-    # Check pip
     try:
         result = subprocess.run(['pip', '--version'], 
                               capture_output=True, text=True, check=True)
@@ -49,7 +44,6 @@ def check_windows_environment():
         print(" pip not found")
         return False
     
-    # Check if we're in the right directory
     required_files = ['manage.py', 'requirements.txt', 'config/settings.py']
     missing_files = []
     
@@ -64,13 +58,11 @@ def check_windows_environment():
     
     print(" All required files found")
     
-    # Check virtual environment
     if Path('venv').exists():
         print(" Virtual environment exists")
     else:
         print("  Virtual environment not found (will be created)")
     
-    # Check .env file
     if Path('.env').exists():
         print(" .env file exists")
     else:

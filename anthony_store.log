@@ -36,31 +36,31 @@ WARNING 2025-05-30 10:57:32,151 log 2628 13296 Not Found: /serviceworker.js
 WARNING 2025-05-30 10:57:32,152 basehttp 2628 13296 "GET /serviceworker.js HTTP/1.1" 404 4939
 ERROR 2025-05-30 10:59:44,267 exception 13280 12572 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
 Traceback (most recent call last):
-  File "C:\Users\monyancha\Desktop\cynthia-store\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+  File "C:\Users\monyancha\Desktop\anthony-store\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
     response = get_response(request)
-  File "C:\Users\monyancha\Desktop\cynthia-store\venv\Lib\site-packages\django\utils\deprecation.py", line 119, in __call__
+  File "C:\Users\monyancha\Desktop\anthony-store\venv\Lib\site-packages\django\utils\deprecation.py", line 119, in __call__
     response = self.process_request(request)
-  File "C:\Users\monyancha\Desktop\cynthia-store\venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+  File "C:\Users\monyancha\Desktop\anthony-store\venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
     host = request.get_host()
-  File "C:\Users\monyancha\Desktop\cynthia-store\venv\Lib\site-packages\django\http\request.py", line 186, in get_host
+  File "C:\Users\monyancha\Desktop\anthony-store\venv\Lib\site-packages\django\http\request.py", line 186, in get_host
     raise DisallowedHost(msg)
 django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
 WARNING 2025-05-30 10:59:44,488 log 13280 12572 Bad Request: /api/categories/
-INFO 2025-05-30 11:10:51,379 autoreload 2628 8396 C:\Users\monyancha\Desktop\cynthia-store\config\settings.py changed, reloading.
+INFO 2025-05-30 11:10:51,379 autoreload 2628 8396 C:\Users\monyancha\Desktop\anthony-store\config\settings.py changed, reloading.
 INFO 2025-05-30 11:10:56,944 autoreload 13128 8736 Watching for file changes with StatReloader
-INFO 2025-05-30 11:13:09,766 autoreload 13128 8736 C:\Users\monyancha\Desktop\cynthia-store\config\settings.py changed, reloading.
+INFO 2025-05-30 11:13:09,766 autoreload 13128 8736 C:\Users\monyancha\Desktop\anthony-store\config\settings.py changed, reloading.
 INFO 2025-05-30 11:13:15,815 autoreload 1440 12772 Watching for file changes with StatReloader
-INFO 2025-05-30 11:14:22,421 autoreload 1440 12772 C:\Users\monyancha\Desktop\cynthia-store\config\settings.py changed, reloading.
+INFO 2025-05-30 11:14:22,421 autoreload 1440 12772 C:\Users\monyancha\Desktop\anthony-store\config\settings.py changed, reloading.
 INFO 2025-05-30 11:14:26,689 autoreload 12720 11740 Watching for file changes with StatReloader
-INFO 2025-05-30 11:16:14,814 autoreload 12720 11740 C:\Users\monyancha\Desktop\cynthia-store\config\settings.py changed, reloading.
+INFO 2025-05-30 11:16:14,814 autoreload 12720 11740 C:\Users\monyancha\Desktop\anthony-store\config\settings.py changed, reloading.
 INFO 2025-05-30 11:16:21,322 autoreload 12772 9156 Watching for file changes with StatReloader
-INFO 2025-05-30 11:18:35,938 autoreload 12772 9156 C:\Users\monyancha\Desktop\cynthia-store\config\settings.py changed, reloading.
+INFO 2025-05-30 11:18:35,938 autoreload 12772 9156 C:\Users\monyancha\Desktop\anthony-store\config\settings.py changed, reloading.
 INFO 2025-05-30 11:18:41,679 autoreload 11384 8964 Watching for file changes with StatReloader
-INFO 2025-05-30 11:26:25,061 autoreload 11384 8964 C:\Users\monyancha\Desktop\cynthia-store\config\settings.py changed, reloading.
+INFO 2025-05-30 11:26:25,061 autoreload 11384 8964 C:\Users\monyancha\Desktop\anthony-store\config\settings.py changed, reloading.
 INFO 2025-05-30 11:26:32,392 autoreload 12356 8048 Watching for file changes with StatReloader
-INFO 2025-05-30 11:42:24,191 autoreload 12356 8048 C:\Users\monyancha\Desktop\cynthia-store\config\settings.py changed, reloading.
+INFO 2025-05-30 11:42:24,191 autoreload 12356 8048 C:\Users\monyancha\Desktop\anthony-store\config\settings.py changed, reloading.
 INFO 2025-05-30 11:42:33,152 autoreload 2588 12456 Watching for file changes with StatReloader
-INFO 2025-05-30 11:43:58,109 autoreload 2588 12456 C:\Users\monyancha\Desktop\cynthia-store\config\settings.py changed, reloading.
+INFO 2025-05-30 11:43:58,109 autoreload 2588 12456 C:\Users\monyancha\Desktop\anthony-store\config\settings.py changed, reloading.
 INFO 2025-05-30 11:44:04,745 autoreload 7460 8252 Watching for file changes with StatReloader
 INFO 2025-05-30 12:37:28,511 basehttp 7460 6260 "GET / HTTP/1.1" 302 0
 INFO 2025-05-30 12:37:29,350 basehttp 7460 6260 "GET /swagger/ HTTP/1.1" 200 2250
@@ -498,3 +498,7 @@ INFO 2025-09-13 14:18:37,767 autoreload 20136 20160 C:\Users\anton\Documents\Pro
 INFO 2025-09-13 14:18:41,257 autoreload 16636 20312 Watching for file changes with StatReloader
 INFO 2025-09-13 14:18:47,080 autoreload 16636 20312 C:\Users\anton\Documents\Projects\Unzipped\savannah-backend-assessment\config\settings.py changed, reloading.
 INFO 2025-09-13 14:18:49,909 autoreload 17504 10424 Watching for file changes with StatReloader
+INFO 2025-09-14 01:55:25,962 autoreload 8080 15572 Watching for file changes with StatReloader
+INFO 2025-09-14 01:55:46,242 autoreload 8080 15572 C:\Users\anton\Desktop\savannah-backend-assessment-refined\savannah-backend-assessment\config\settings.py changed, reloading.
+INFO 2025-09-14 01:55:50,113 autoreload 10452 15100 Watching for file changes with StatReloader
+INFO 2025-09-14 01:56:41,474 autoreload 10452 15100 C:\Users\anton\Desktop\savannah-backend-assessment-refined\savannah-backend-assessment\config\settings.py changed, reloading.

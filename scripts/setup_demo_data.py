@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 """
 Enhanced demo data setup script for Anthony Store
 Creates comprehensive test data with proper relationships and business logic
@@ -11,7 +10,6 @@ from datetime import datetime, timedelta
 import random
 from django.db import models
 
-# Set up Django environment
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings')
 django.setup()
@@ -25,7 +23,7 @@ from apps.orders.models import Order, OrderItem
 from apps.inventory.models import InventoryTransaction, StockAlert
 from apps.analytics.models import ProductView, SalesReport
 
-class CynthiaStoreDataSetup:
+class AnthonyStoreDataSetup:
     """Comprehensive data setup for Anthony Store"""
     
     def __init__(self):
@@ -45,7 +43,7 @@ class CynthiaStoreDataSetup:
                 username='admin',
                 email='anthonymakori2@gmail.com',
                 password='admin',
-                first_name='Cynthia',
+                first_name='Anthony',
                 last_name='Samuels'
             )
             print(' Superuser created for Anthony Store')
@@ -149,7 +147,6 @@ class CynthiaStoreDataSetup:
         
         for customer_info in customers_data:
             if not User.objects.filter(username=customer_info['username']).exists():
-                # Create user
                 user = User.objects.create_user(
                     username=customer_info['username'],
                     email=customer_info['email'],
@@ -158,7 +155,6 @@ class CynthiaStoreDataSetup:
                     last_name=customer_info['last_name']
                 )
                 
-                # Create customer profile
                 customer_data = customer_info['customer_data']
                 customer = Customer.objects.create(
                     user=user,
@@ -168,7 +164,6 @@ class CynthiaStoreDataSetup:
                     **customer_data
                 )
                 
-                # Create additional addresses
                 if customer_info['username'] == 'jane_smith':
                     CustomerAddress.objects.create(
                         customer=customer,
@@ -282,7 +277,6 @@ class CynthiaStoreDataSetup:
                 sort_order=level
             )
             
-            # Add category attributes for some categories
             if category.name == 'Smartphones':
                 CategoryAttribute.objects.create(
                     category=category,
@@ -302,7 +296,6 @@ class CynthiaStoreDataSetup:
             self.created_objects['categories'].append(category)
             print(f'✅ Category created: {category.name} (Level {category.level})')
             
-            # Create children recursively
             for child_data in category_data.get('children', []):
                 create_category_recursive(child_data, category, level + 1)
             
@@ -338,7 +331,6 @@ class CynthiaStoreDataSetup:
     def create_products(self):
         """Create comprehensive product catalog"""
         
-        # Get categories and brands
         smartphones_cat = Category.objects.get(name='Smartphones')
         iphones_cat = Category.objects.get(name='iPhones')
         android_cat = Category.objects.get(name='Android Phones')
@@ -353,7 +345,6 @@ class CynthiaStoreDataSetup:
         dell_brand = Brand.objects.get(name='Dell')
         
         products_data = [
-            # iPhones
             {
                 'name': 'iPhone 15 Pro Max',
                 'description': 'The most advanced iPhone with titanium design, A17 Pro chip, and professional camera system.',
@@ -398,7 +389,6 @@ class CynthiaStoreDataSetup:
                 'status': 'published'
             },
             
-            # Samsung Phones
             {
                 'name': 'Samsung Galaxy S24 Ultra',
                 'description': 'Premium Android smartphone with S Pen, 200MP camera, and AI features.',
@@ -433,7 +423,6 @@ class CynthiaStoreDataSetup:
                 'status': 'published'
             },
             
-            # Google Phones
             {
                 'name': 'Google Pixel 8 Pro',
                 'description': 'Google\'s flagship phone with advanced AI photography and pure Android.',
@@ -448,7 +437,6 @@ class CynthiaStoreDataSetup:
                 'status': 'published'
             },
             
-            # Laptops
             {
                 'name': 'MacBook Pro 16-inch M3 Pro',
                 'description': 'Professional laptop with M3 Pro chip, Liquid Retina XDR display, and all-day battery.',
@@ -484,7 +472,6 @@ class CynthiaStoreDataSetup:
                 'status': 'published'
             },
             
-            # Tablets
             {
                 'name': 'iPad Pro 12.9-inch M2',
                 'description': 'The ultimate iPad experience with M2 chip and Liquid Retina XDR display.',
@@ -499,7 +486,6 @@ class CynthiaStoreDataSetup:
                 'status': 'published'
             },
             
-            # Headphones
             {
                 'name': 'AirPods Pro (2nd generation)',
                 'description': 'Active Noise Cancellation, Adaptive Transparency, and spatial audio.',
@@ -529,28 +515,23 @@ class CynthiaStoreDataSetup:
         
         for product_data in products_data:
             if not Product.objects.filter(sku=product_data['sku']).exists():
-                # Extract variants and attributes
                 variants_data = product_data.pop('variants', [])
                 attributes_data = product_data.pop('attributes', [])
                 
-                # Create product
                 product = Product.objects.create(**product_data)
                 
-                # Create variants
                 for variant_data in variants_data:
                     ProductVariant.objects.create(
                         product=product,
                         **variant_data
                     )
                 
-                # Create attributes
                 for attr_data in attributes_data:
                     ProductAttribute.objects.create(
                         product=product,
                         **attr_data
                     )
                 
-                # Create inventory transaction for initial stock
                 InventoryTransaction.objects.create(
                     product=product,
                     transaction_type='purchase',
@@ -560,7 +541,6 @@ class CynthiaStoreDataSetup:
                     created_by=User.objects.get(username='admin')
                 )
                 
-                # Create stock alert if needed
                 if product.stock_quantity <= product.low_stock_threshold:
                     StockAlert.objects.create(
                         product=product,
@@ -609,13 +589,11 @@ class CynthiaStoreDataSetup:
         ]
         
         for order_data in orders_data:
-            # Calculate total
             total_amount = sum(
                 item['quantity'] * item['price'] 
                 for item in order_data['items']
             )
             
-            # Create order
             order = Order.objects.create(
                 customer=order_data['customer'],
                 status=order_data['status'],
@@ -623,11 +601,9 @@ class CynthiaStoreDataSetup:
                 shipping_address=order_data['customer'].full_address
             )
             
-            # Set creation date
             order.created_at = timezone.now() - timedelta(days=order_data['days_ago'])
             order.save()
             
-            # Create order items
             for item_data in order_data['items']:
                 OrderItem.objects.create(
                     order=order,
@@ -636,30 +612,27 @@ class CynthiaStoreDataSetup:
                     price=item_data['price']
                 )
                 
-                # Update product stock
                 product = item_data['product']
                 product.stock_quantity -= item_data['quantity']
                 product.total_sales += item_data['quantity']
                 product.save()
                 
-                # Create inventory transaction
                 InventoryTransaction.objects.create(
                     product=product,
                     transaction_type='sale',
                     quantity=-item_data['quantity'],
                     reference_number=f'ORDER-{order.id}',
-                    notes=f'Sale from order #{order.id}',
+                    notes=f'Sale from order
                     created_by=User.objects.get(username='admin')
                 )
             
-            # Update customer total spent
             customer = order_data['customer']
             customer.total_spent += total_amount
-            customer.loyalty_points += int(total_amount / 10)  # 1 point per 10 units spent
+            customer.loyalty_points += int(total_amount / 10)
             customer.save()
             
             self.created_objects['orders'].append(order)
-            print(f'✅ Order created: #{order.id} for {customer.full_name} - {order.status}')
+            print(f'✅ Order created:
     
     def create_product_reviews(self):
         """Create product reviews"""
@@ -707,7 +680,6 @@ class CynthiaStoreDataSetup:
             ).exists():
                 review = ProductReview.objects.create(**review_data)
                 
-                # Update product average rating
                 product = review_data['product']
                 reviews = ProductReview.objects.filter(product=product, is_approved=True)
                 avg_rating = sum(r.rating for r in reviews) / reviews.count()
@@ -722,25 +694,21 @@ class CynthiaStoreDataSetup:
         products = Product.objects.filter(status='published', is_active=True)
         customers = Customer.objects.all()
         
-        # Create product views
-        for product in products[:5]:  # Create views for first 5 products
+        for product in products[:5]:
             for i in range(random.randint(10, 50)):
                 ProductView.objects.create(
                     product=product,
                     customer=random.choice(customers) if customers.exists() and random.choice([True, False]) else None,
                     ip_address=f'192.168.1.{random.randint(1, 254)}',
-                    user_agent='Mozilla/5.0 (compatible; CynthiaStore/1.0)',
+                    user_agent='Mozilla/5.0 (compatible; AnthonyStore/1.0)',
                     referrer='https://google.com' if random.choice([True, False]) else ''
                 )
             
-            # Update product view count
             product.view_count = ProductView.objects.filter(product=product).count()
             product.save()
         
-        # Create sales reports
         orders = Order.objects.all()
         if orders.exists():
-            # Group orders by date
             from django.db.models import Count, Sum
             from datetime import date
             
@@ -784,7 +752,7 @@ class CynthiaStoreDataSetup:
         print('🎉 Anthony STORE - DEMO DATA SETUP COMPLETE!')
         print('='*60)
         print(f'Business: Anthony Store')
-        print(f'Owner: Cynthia Samuels')
+        print(f'Owner: Anthony Samuels')
         print(f'Email: anthonymakori2@gmail.com')
         print(f'Phone: +254707497200')
         print(f'Location: Nairobi, Kenya')
@@ -837,7 +805,7 @@ class CynthiaStoreDataSetup:
         print('\n💼 RECENT ORDERS:')
         recent_orders = Order.objects.order_by('-created_at')[:5]
         for order in recent_orders:
-            print(f'• Order #{order.id} - {order.customer.full_name} - KES {order.total_amount} ({order.status})')
+            print(f'• Order
         
         print('\n🎯 NEXT STEPS:')
         print('1. Start the development server: python manage.py runserver')
@@ -882,7 +850,7 @@ class CynthiaStoreDataSetup:
 
 def main():
     """Main function to run the setup"""
-    setup = CynthiaStoreDataSetup()
+    setup = AnthonyStoreDataSetup()
     success = setup.run_setup()
     
     if success:

@@ -127,13 +127,11 @@ class TestProductsComprehensive:
         
         url = reverse('product-list')
         
-        # Order by price ascending
         response = api_client.get(url, {'ordering': 'price'})
         assert response.status_code == status.HTTP_200_OK
         prices = [float(p['price']) for p in response.data['results']]
         assert prices == sorted(prices)
         
-        # Order by price descending
         response = api_client.get(url, {'ordering': '-price'})
         assert response.status_code == status.HTTP_200_OK
         prices = [float(p['price']) for p in response.data['results']]
@@ -143,14 +141,12 @@ class TestProductsComprehensive:
         """Test product stock management"""
         initial_stock = product.stock_quantity
         
-        # Test stock reduction
         product.stock_quantity -= 5
         product.save()
         
         product.refresh_from_db()
         assert product.stock_quantity == initial_stock - 5
         
-        # Test stock properties
         assert product.is_in_stock == (product.stock_quantity > 0)
         assert product.is_low_stock == (product.stock_quantity <= product.low_stock_threshold)
     
@@ -248,10 +244,8 @@ class TestProductsComprehensive:
     
     def test_product_validation_unique_sku(self, admin_client, category, brand):
         """Test that SKU must be unique"""
-        # Create first product
         ProductFactory(sku='UNIQUE001')
         
-        # Try to create second product with same SKU
         url = reverse('product-list')
         data = {
             'name': 'Another Product',
@@ -259,7 +253,7 @@ class TestProductsComprehensive:
             'price': '99.99',
             'category': str(category.id),
             'brand': brand.id,
-            'sku': 'UNIQUE001',  # Duplicate SKU
+            'sku': 'UNIQUE001',
             'stock_quantity': 10
         }
         response = admin_client.post(url, data)
@@ -272,7 +266,7 @@ class TestProductsComprehensive:
         data = {
             'name': 'Test Product',
             'description': 'A test product',
-            'price': '-10.00',  # Negative price
+            'price': '-10.00',
             'category': str(category.id),
             'brand': brand.id,
             'sku': 'TEST001',

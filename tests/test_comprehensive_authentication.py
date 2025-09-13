@@ -123,7 +123,6 @@ class TestAuthenticationComprehensive:
         assert response.status_code == status.HTTP_200_OK
         assert 'Logout successful' in response.data['message']
         
-        # Token should be deleted
         assert not Token.objects.filter(user=user).exists()
     
     def test_get_user_profile(self, authenticated_client, user):
@@ -204,14 +203,12 @@ class TestAuthenticationComprehensive:
         """Test token-based authentication"""
         token, created = Token.objects.get_or_create(user=user)
         
-        # Test with valid token
         api_client.credentials(HTTP_AUTHORIZATION=f'Token {token.key}')
         url = reverse('profile')
         response = api_client.get(url)
         
         assert response.status_code == status.HTTP_200_OK
         
-        # Test with invalid token
         api_client.credentials(HTTP_AUTHORIZATION='Token invalidtoken')
         response = api_client.get(url)
         

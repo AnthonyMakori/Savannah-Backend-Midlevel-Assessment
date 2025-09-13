@@ -17,7 +17,6 @@ def custom_exception_handler(exc, context):
             'status_code': response.status_code
         }
         
-        # Log the error
         logger.error(f"API Error: {exc} - Context: {context}")
         
         response.data = custom_response_data

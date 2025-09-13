@@ -18,11 +18,9 @@ class Customer(models.Model):
         ('vip', 'VIP'),
     ]
     
-    # Basic Information
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='customer')
     customer_id = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
     
-    # Personal Information
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     middle_name = models.CharField(max_length=50, blank=True)
@@ -30,7 +28,6 @@ class Customer(models.Model):
     date_of_birth = models.DateField(null=True, blank=True)
     age = models.PositiveIntegerField(null=True, blank=True)
     
-    # Identification
     id_number = models.CharField(
         max_length=20, 
         unique=True, 
@@ -38,7 +35,6 @@ class Customer(models.Model):
     )
     passport_number = models.CharField(max_length=20, blank=True)
     
-    # Contact Information
     phone_number = models.CharField(
         max_length=20,
         validators=[RegexValidator(r'^\+?1?\d{9,15}$', 'Enter a valid phone number')]
@@ -46,7 +42,6 @@ class Customer(models.Model):
     alternative_phone = models.CharField(max_length=20, blank=True)
     email = models.EmailField()
     
-    # Address Information
     address_line_1 = models.CharField(max_length=255)
     address_line_2 = models.CharField(max_length=255, blank=True)
     city = models.CharField(max_length=100)
@@ -54,12 +49,10 @@ class Customer(models.Model):
     postal_code = models.CharField(max_length=20)
     country = models.CharField(max_length=100, default='Kenya')
     
-    # Business Information (for business customers)
     company_name = models.CharField(max_length=200, blank=True)
     tax_number = models.CharField(max_length=50, blank=True)
     business_registration_number = models.CharField(max_length=50, blank=True)
     
-    # Customer Classification
     customer_type = models.CharField(
         max_length=20, 
         choices=CUSTOMER_TYPE_CHOICES, 
@@ -68,25 +61,21 @@ class Customer(models.Model):
     is_verified = models.BooleanField(default=False)
     verification_date = models.DateTimeField(null=True, blank=True)
     
-    # Preferences
     preferred_language = models.CharField(max_length=10, default='en')
     preferred_currency = models.CharField(max_length=3, default='KES')
     marketing_consent = models.BooleanField(default=False)
     sms_notifications = models.BooleanField(default=True)
     email_notifications = models.BooleanField(default=True)
     
-    # Financial Information
     credit_limit = models.DecimalField(max_digits=12, decimal_places=2, default=0.00)
     loyalty_points = models.PositiveIntegerField(default=0)
     total_spent = models.DecimalField(max_digits=12, decimal_places=2, default=0.00)
     
-    # Metadata
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     last_login = models.DateTimeField(null=True, blank=True)
     is_active = models.BooleanField(default=True)
     
-    # Notes and Comments
     notes = models.TextField(blank=True, help_text="Internal notes about the customer")
     
     class Meta:

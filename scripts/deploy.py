@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 """
 Bulletproof deployment script for Anthony Store
 This script handles deployment to multiple environments with comprehensive error handling
@@ -14,7 +13,6 @@ import argparse
 import shutil
 import tempfile
 
-# Configure logging
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
@@ -29,7 +27,7 @@ class DeploymentError(Exception):
     """Custom exception for deployment errors"""
     pass
 
-class CynthiaStoreDeployer:
+class AnthonyStoreDeployer:
     """Bulletproof deployer for Anthony Store"""
     
     def __init__(self, environment='local'):
@@ -38,7 +36,6 @@ class CynthiaStoreDeployer:
         self.backup_dir = self.project_root / 'backups'
         self.deployment_config = self.load_deployment_config()
         
-        # Ensure backup directory exists
         self.backup_dir.mkdir(exist_ok=True)
         
         logger.info(f"Initializing deployment for environment: {environment}")
@@ -88,7 +85,6 @@ class CynthiaStoreDeployer:
             try:
                 with open(config_file, 'r') as f:
                     user_config = json.load(f)
-                    # Merge with defaults
                     for env in default_config:
                         if env in user_config:
                             default_config[env].update(user_config[env])
@@ -96,7 +92,6 @@ class CynthiaStoreDeployer:
             except Exception as e:
                 logger.warning(f"Failed to load config file: {e}. Using defaults.")
         
-        # Save default config
         try:
             with open(config_file, 'w') as f:
                 json.dump(default_config, f, indent=2)
@@ -151,7 +146,6 @@ class CynthiaStoreDeployer:
         
         config = self.deployment_config.get(self.environment, {})
         
-        # Check Python version
         python_version = config.get('python_version', '3.11')
         try:
             result = self.run_command(['python', '--version'])
@@ -162,14 +156,12 @@ class CynthiaStoreDeployer:
             logger.error("Python not found or not accessible")
             raise DeploymentError("Python is required but not found")
         
-        # Check Git
         try:
             self.run_command(['git', '--version'])
         except Exception:
             logger.error("Git not found")
             raise DeploymentError("Git is required but not found")
         
-        # Environment-specific checks
         if self.environment == 'docker':
             self.check_docker()
         elif self.environment == 'kubernetes':
@@ -202,10 +194,8 @@ class CynthiaStoreDeployer:
         backup_path = self.backup_dir / backup_name
         
         try:
-            # Create backup directory
             backup_path.mkdir(exist_ok=True)
             
-            # Backup database if exists
             if (self.project_root / 'db.sqlite3').exists():
                 shutil.copy2(
                     self.project_root / 'db.sqlite3',
@@ -213,7 +203,6 @@ class CynthiaStoreDeployer:
                 )
                 logger.info("Database backup created")
             
-            # Backup media files if exists
             media_dir = self.project_root / 'media'
             if media_dir.exists():
                 shutil.copytree(
@@ -223,7 +212,6 @@ class CynthiaStoreDeployer:
                 )
                 logger.info("Media files backup created")
             
-            # Backup environment file if exists
             env_file = self.project_root / '.env'
             if env_file.exists():
                 shutil.copy2(env_file, backup_path / '.env')
@@ -247,18 +235,15 @@ class CynthiaStoreDeployer:
                 self.run_command(['python', '-m', 'venv', 'venv'])
                 logger.info("Virtual environment created")
             
-            # Activate virtual environment and install dependencies
-            if os.name == 'nt':  # Windows
+            if os.name == 'nt':
                 pip_path = venv_path / 'Scripts' / 'pip'
                 python_path = venv_path / 'Scripts' / 'python'
-            else:  # Unix/Linux/macOS
+            else:
                 pip_path = venv_path / 'bin' / 'pip'
                 python_path = venv_path / 'bin' / 'python'
             
-            # Upgrade pip
             self.run_command([str(python_path), '-m', 'pip', 'install', '--upgrade', 'pip'])
             
-            # Install requirements
             requirements_file = self.project_root / 'requirements.txt'
             if requirements_file.exists():
                 self.run_command([str(pip_path), 'install', '-r', 'requirements.txt'])
@@ -277,7 +262,6 @@ class CynthiaStoreDeployer:
         config = self.deployment_config.get(self.environment, {})
         
         try:
-            # Run pytest with coverage
             test_command = [
                 str(python_path), '-m', 'pytest',
                 '--cov=apps',
@@ -310,10 +294,8 @@ class CynthiaStoreDeployer:
         logger.info("Running database migrations...")
         
         try:
-            # Create migrations
             self.run_command([str(python_path), 'manage.py', 'makemigrations'])
             
-            # Apply migrations
             self.run_command([str(python_path), 'manage.py', 'migrate'])
             
             logger.info("Migrations completed successfully")
@@ -353,7 +335,6 @@ class CynthiaStoreDeployer:
         logger.info("Loading initial data...")
         
         try:
-            # Run setup demo data script
             setup_script = self.project_root / 'scripts' / 'setup_demo_data.py'
             if setup_script.exists():
                 self.run_command([str(python_path), str(setup_script)])
@@ -368,19 +349,14 @@ class CynthiaStoreDeployer:
         logger.info("Starting local deployment...")
         
         try:
-            # Setup virtual environment
             python_path = self.setup_virtual_environment()
             
-            # Run tests
             self.run_tests(python_path)
             
-            # Run migrations
             self.run_migrations(python_path)
             
-            # Collect static files
             self.collect_static_files(python_path)
             
-            # Load fixtures
             self.load_fixtures(python_path)
             
             logger.info("Local deployment completed successfully!")
@@ -395,23 +371,18 @@ class CynthiaStoreDeployer:
         logger.info("Starting Docker deployment...")
         
         try:
-            # Build Docker image
             self.run_command(['docker-compose', 'build'])
             
-            # Start services
             self.run_command(['docker-compose', 'up', '-d'])
             
-            # Wait for services to be ready
             logger.info("Waiting for services to be ready...")
             time.sleep(30)
             
-            # Run migrations in container
             self.run_command([
                 'docker-compose', 'exec', '-T', 'web',
                 'python', 'manage.py', 'migrate'
             ])
             
-            # Load demo data
             self.run_command([
                 'docker-compose', 'exec', '-T', 'web',
                 'python', 'scripts/setup_demo_data.py'
@@ -422,7 +393,6 @@ class CynthiaStoreDeployer:
             
         except Exception as e:
             logger.error(f"Docker deployment failed: {e}")
-            # Attempt cleanup
             self.run_command(['docker-compose', 'down'], check=False)
             raise
     
@@ -431,29 +401,25 @@ class CynthiaStoreDeployer:
         logger.info("Starting Kubernetes deployment...")
         
         config = self.deployment_config.get('kubernetes', {})
-        namespace = config.get('namespace', 'cynthia-store')
+        namespace = config.get('namespace', 'anthony-store')
         helm_chart = config.get('helm_chart', './charts/store-chart')
         
         try:
-            # Create namespace if it doesn't exist
             self.run_command([
                 'kubectl', 'create', 'namespace', namespace
             ], check=False)
             
-            # Build and push Docker image (if registry is configured)
             image_tag = f"anthony-store:latest"
             self.run_command(['docker', 'build', '-t', image_tag, '.'])
             
-            # Deploy using Helm
             self.run_command([
                 'helm', 'upgrade', '--install',
-                'cynthia-store', helm_chart,
+                'anthony-store', helm_chart,
                 '--namespace', namespace,
                 '--set', f'image.tag=latest',
                 '--wait'
             ])
             
-            # Get service information
             result = self.run_command([
                 'kubectl', 'get', 'services',
                 '--namespace', namespace
@@ -472,10 +438,8 @@ class CynthiaStoreDeployer:
         logger.info("Setting up GitHub Actions deployment...")
         
         try:
-            # Check if we're in a git repository
             self.run_command(['git', 'status'])
             
-            # Ensure GitHub Actions workflow exists
             workflow_dir = self.project_root / '.github' / 'workflows'
             workflow_file = workflow_dir / 'ci.yml'
             
@@ -483,17 +447,14 @@ class CynthiaStoreDeployer:
                 logger.error("GitHub Actions workflow file not found")
                 raise DeploymentError("GitHub Actions workflow file missing")
             
-            # Add and commit changes
             self.run_command(['git', 'add', '.'])
             
-            # Check if there are changes to commit
             result = self.run_command(['git', 'status', '--porcelain'], check=False)
             
             if result.stdout.strip():
                 commit_message = "Deploy Anthony Store updates"
                 self.run_command(['git', 'commit', '-m', commit_message])
                 
-                # Push to GitHub
                 self.run_command(['git', 'push', 'origin', 'main'])
                 
                 logger.info("Changes pushed to GitHub successfully!")
@@ -512,8 +473,8 @@ class CynthiaStoreDeployer:
         health_urls = {
             'local': 'http://localhost:8000/health/',
             'docker': 'http://localhost:8000/health/',
-            'kubernetes': None,  # Will be determined dynamically
-            'github': None  # Not applicable
+            'kubernetes': None,
+            'github': None
         }
         
         url = health_urls.get(self.environment)
@@ -525,7 +486,6 @@ class CynthiaStoreDeployer:
         try:
             import requests
             
-            # Wait a bit for the service to be ready
             time.sleep(10)
             
             for attempt in range(5):
@@ -552,13 +512,10 @@ class CynthiaStoreDeployer:
         logger.info(f"Starting deployment to {self.environment} environment")
         
         try:
-            # Check prerequisites
             self.check_prerequisites()
             
-            # Create backup
             backup_path = self.create_backup()
             
-            # Deploy based on environment
             if self.environment == 'local':
                 self.deploy_local()
             elif self.environment == 'docker':
@@ -570,12 +527,10 @@ class CynthiaStoreDeployer:
             else:
                 raise DeploymentError(f"Unknown environment: {self.environment}")
             
-            # Health check
             self.health_check()
             
             logger.info(f"Deployment to {self.environment} completed successfully!")
             
-            # Cleanup old backups 
             self.cleanup_old_backups()
             
         except Exception as e:
@@ -588,7 +543,6 @@ class CynthiaStoreDeployer:
         try:
             backups = sorted(self.backup_dir.glob('backup_*'), key=os.path.getctime)
             
-            # Keep only the last 7 backups
             for backup in backups[:-7]:
                 if backup.is_dir():
                     shutil.rmtree(backup)
@@ -624,7 +578,7 @@ def main():
     args = parser.parse_args()
     
     try:
-        deployer = CynthiaStoreDeployer(args.environment)
+        deployer = AnthonyStoreDeployer(args.environment)
         deployer.deploy()
         
     except KeyboardInterrupt:

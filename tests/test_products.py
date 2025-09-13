@@ -37,11 +37,9 @@ def create_product(create_category):
 
 @pytest.mark.django_db
 def test_list_products(api_client, create_product):
-    # Create some products
     create_product("Laptop", 1000)
     create_product("Phone", 500)
     
-    # Get products
     url = reverse('product-list')
     response = api_client.get(url)
     
@@ -50,13 +48,10 @@ def test_list_products(api_client, create_product):
 
 @pytest.mark.django_db
 def test_create_product(api_client, admin_user, create_category):
-    # Login as admin
     api_client.force_authenticate(user=admin_user)
     
-    # Create category
     category = create_category("Electronics")
     
-    # Create product
     url = reverse('product-list')
     data = {
         'name': 'Laptop',
@@ -75,16 +70,13 @@ def test_create_product(api_client, admin_user, create_category):
 
 @pytest.mark.django_db
 def test_filter_products_by_category(api_client, create_product, create_category):
-    # Create categories
     electronics = create_category("Electronics")
     clothing = create_category("Clothing")
     
-    # Create products
     laptop = Product.objects.create(name="Laptop", price=1000, category=electronics, sku="LAP001", stock=10)
     phone = Product.objects.create(name="Phone", price=500, category=electronics, sku="PHO001", stock=20)
     shirt = Product.objects.create(name="Shirt", price=30, category=clothing, sku="SHI001", stock=50)
     
-    # Filter by electronics category
     url = f"{reverse('product-list')}?category={electronics.id}"
     response = api_client.get(url)
     

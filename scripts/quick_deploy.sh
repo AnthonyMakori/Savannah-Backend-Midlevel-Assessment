@@ -1,19 +1,14 @@
-#!/bin/bash
 
-# Quick deployment script for Anthony Store
-# This script provides rapid deployment with minimal configuration
 
 set -e
 
-# Colors for output
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 BLUE='\033[0;34m'
 PURPLE='\033[0;35m'
-NC='\033[0m' # No Color
+NC='\033[0m'
 
-# Business information
 BUSINESS_NAME="Anthony Store"
 BUSINESS_EMAIL="anthonymakori2@gmail.com"
 BUSINESS_PHONE="+254707497200"
@@ -46,12 +41,10 @@ print_error() {
     echo -e "${RED}[ERROR]${NC} $1"
 }
 
-# Function to check if command exists
 command_exists() {
     command -v "$1" >/dev/null 2>&1
 }
 
-# Function to install Python dependencies
 install_dependencies() {
     print_status "Installing Python dependencies..."
     
@@ -64,20 +57,16 @@ install_dependencies() {
     fi
 }
 
-# Function to setup database
 setup_database() {
     print_status "Setting up database..."
     
-    # Create migrations
     python manage.py makemigrations
     
-    # Apply migrations
     python manage.py migrate
     
     print_success "Database setup complete"
 }
 
-# Function to create superuser
 create_superuser() {
     print_status "Creating superuser..."
     
@@ -97,7 +86,6 @@ else:
     print_success "Superuser ready"
 }
 
-# Function to load demo data
 load_demo_data() {
     print_status "Loading demo data..."
     
@@ -109,7 +97,6 @@ load_demo_data() {
     fi
 }
 
-# Function to collect static files
 collect_static() {
     print_status "Collecting static files..."
     
@@ -117,14 +104,11 @@ collect_static() {
     print_success "Static files collected"
 }
 
-# Function to run tests
 run_tests() {
     print_status "Running quick tests..."
     
-    # Run basic health checks
     python manage.py check
     
-    # Run a subset of tests
     if command_exists pytest; then
         pytest tests/ -x --tb=short -q || print_warning "Some tests failed, but continuing..."
     else
@@ -134,7 +118,6 @@ run_tests() {
     print_success "Tests completed"
 }
 
-# Function to start development server
 start_server() {
     print_status "Starting development server..."
     
@@ -160,30 +143,25 @@ start_server() {
     python manage.py runserver
 }
 
-# Main deployment function
 main() {
     print_banner
     
-    # Check if we're in the right directory
     if [ ! -f "manage.py" ]; then
         print_error "This script must be run from the Django project root directory"
         exit 1
     fi
     
-    # Check Python
     if ! command_exists python && ! command_exists python3; then
         print_error "Python is not installed or not in PATH"
         exit 1
     fi
     
-    # Determine Python command
     if command_exists python3; then
         PYTHON_CMD="python3"
     else
         PYTHON_CMD="python"
     fi
     
-    # Check Python version
     PYTHON_VERSION=$($PYTHON_CMD --version 2>&1 | cut -d' ' -f2 | cut -d'.' -f1,2)
     if [ "$(printf '%s\n' "3.8" "$PYTHON_VERSION" | sort -V | head -n1)" != "3.8" ]; then
         print_error "Python 3.8 or higher is required. Found: $PYTHON_VERSION"
@@ -192,14 +170,12 @@ main() {
     
     print_status "Using Python: $PYTHON_VERSION"
     
-    # Create virtual environment if it doesn't exist
     if [ ! -d "venv" ]; then
         print_status "Creating virtual environment..."
         $PYTHON_CMD -m venv venv
         print_success "Virtual environment created"
     fi
     
-    # Activate virtual environment
     if [ -f "venv/bin/activate" ]; then
         source venv/bin/activate
         print_status "Virtual environment activated"
@@ -210,31 +186,23 @@ main() {
         print_warning "Could not activate virtual environment"
     fi
     
-    # Install dependencies
     install_dependencies
     
-    # Setup database
     setup_database
     
-    # Create superuser
     create_superuser
     
-    # Load demo data
     load_demo_data
     
-    # Collect static files
     collect_static
     
-    # Run tests
     if [ "$1" != "--skip-tests" ]; then
         run_tests
     fi
     
-    # Start server
     start_server
 }
 
-# Handle script arguments
 case "$1" in
     --help|-h)
         echo "Usage: $0 [options]"

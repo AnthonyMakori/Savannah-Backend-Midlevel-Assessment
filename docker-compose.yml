@@ -6,7 +6,7 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     environment:
-      - POSTGRES_DB=${DB_NAME:-cynthia_store}
+      - POSTGRES_DB=${DB_NAME:-anthony_store}
       - POSTGRES_USER=${DB_USER:-postgres}
       - POSTGRES_PASSWORD=${DB_PASSWORD:-postgres}
     ports:
@@ -37,12 +37,12 @@ services:
         condition: service_healthy
     environment:
       - DATABASE_ENGINE=postgresql
-      - DB_NAME=${DB_NAME:-cynthia_store}
+      - DB_NAME=${DB_NAME:-anthony_store}
       - DB_USER=${DB_USER:-postgres}
       - DB_PASSWORD=${DB_PASSWORD:-postgres}
       - DB_HOST=db
       - DB_PORT=5432
-      - REDIS_URL=redis://redis:6379/1
+      - REDIS_URL=redis:
       - DEBUG=${DEBUG:-False}
       - SECRET_KEY=${SECRET_KEY}
     volumes:
@@ -65,12 +65,12 @@ services:
       - redis
     environment:
       - DATABASE_ENGINE=postgresql
-      - DB_NAME=${DB_NAME:-cynthia_store}
+      - DB_NAME=${DB_NAME:-anthony_store}
       - DB_USER=${DB_USER:-postgres}
       - DB_PASSWORD=${DB_PASSWORD:-postgres}
       - DB_HOST=db
       - DB_PORT=5432
-      - REDIS_URL=redis://redis:6379/1
+      - REDIS_URL=redis:
     volumes:
       - .:/app
     command: celery -A config worker -l info

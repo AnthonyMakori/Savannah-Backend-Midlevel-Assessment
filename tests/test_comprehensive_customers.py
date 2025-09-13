@@ -54,7 +54,7 @@ class TestCustomersComprehensive:
         data = {
             'first_name': 'John',
             'last_name': 'Doe',
-            'id_number': '123',  # Too short
+            'id_number': '123',
             'phone_number': '+254707497200',
             'email': 'john@example.com',
             'address_line_1': '123 Main St',
@@ -92,26 +92,21 @@ class TestCustomersComprehensive:
         """Test that customer list is admin only"""
         url = reverse('customer-list')
         
-        # Regular user should not access list
         response = authenticated_client.get(url)
         assert response.status_code == status.HTTP_403_FORBIDDEN
         
-        # Admin should access list
         response = admin_client.get(url)
         assert response.status_code == status.HTTP_200_OK
     
     def test_customer_privacy_protection(self, api_client):
         """Test that customers can only access their own data"""
-        # Create two customers
         customer1 = CustomerFactory()
         customer2 = CustomerFactory()
         
-        # Authenticate as customer1
         from rest_framework.authtoken.models import Token
         token1, _ = Token.objects.get_or_create(user=customer1.user)
         api_client.credentials(HTTP_AUTHORIZATION=f'Token {token1.key}')
         
-        # Try to access customer2's data
         url = reverse('customer-detail', kwargs={'pk': customer2.customer_id})
         response = api_client.get(url)
         
@@ -119,7 +114,6 @@ class TestCustomersComprehensive:
     
     def test_customer_address_management(self, authenticated_client, customer):
         """Test customer address management"""
-        # Create address
         address_data = {
             'customer': customer.customer_id,
             'address_type': 'home',
@@ -195,26 +189,22 @@ class TestCustomersComprehensive:
     
     def test_customer_search_functionality(self, admin_client):
         """Test customer search functionality"""
-        # Create customers with different attributes
         customer1 = CustomerFactory(first_name='Alice', last_name='Smith')
         customer2 = CustomerFactory(first_name='Bob', last_name='Johnson')
         
         url = reverse('customer-list')
         
-        # Search by first name
         response = admin_client.get(url, {'search': 'Alice'})
         assert response.status_code == status.HTTP_200_OK
         assert len(response.data['results']) >= 1
     
     def test_customer_filtering(self, admin_client):
         """Test customer filtering functionality"""
-        # Create customers with different types
         CustomerFactory(customer_type='individual')
         CustomerFactory(customer_type='business')
         
         url = reverse('customer-list')
         
-        # Filter by customer type
         response = admin_client.get(url, {'customer_type': 'business'})
         assert response.status_code == status.HTTP_200_OK
         

@@ -18,7 +18,6 @@ def health_check(request):
         'checks': {}
     }
     
-    # Database check
     try:
         with connection.cursor() as cursor:
             cursor.execute("SELECT 1")
@@ -27,7 +26,6 @@ def health_check(request):
         health_status['checks']['database'] = f'unhealthy: {str(e)}'
         health_status['status'] = 'unhealthy'
     
-    # Cache check
     try:
         cache.set('health_check', 'test', 10)
         cache.get('health_check')
@@ -35,7 +33,6 @@ def health_check(request):
     except Exception as e:
         health_status['checks']['cache'] = f'unhealthy: {str(e)}'
     
-    # Redis check (if configured)
     if hasattr(settings, 'REDIS_URL'):
         try:
             r = redis.from_url(settings.REDIS_URL)
