@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 """
 Comprehensive test runner for Anthony Store
 This script runs all tests with detailed reporting and coverage analysis
@@ -11,11 +10,9 @@ import time
 from pathlib import Path
 import argparse
 
-# Add project root to Python path
 project_root = Path(__file__).parent.parent
 sys.path.insert(0, str(project_root))
 
-# Set Django settings
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings')
 
 import django
@@ -49,7 +46,7 @@ class TestRunner:
                 cwd=cwd,
                 capture_output=True,
                 text=True,
-                timeout=600  # 10 minutes timeout
+                timeout=600
             )
             return result
         except subprocess.TimeoutExpired:
@@ -83,11 +80,9 @@ class TestRunner:
         if result:
             self.test_results['duration'] = end_time - start_time
             
-            # Parse test results from output
             output_lines = result.stdout.split('\n')
             for line in output_lines:
                 if 'passed' in line and 'failed' in line:
-                    # Parse pytest summary line
                     parts = line.split()
                     for i, part in enumerate(parts):
                         if part == 'passed':
@@ -97,7 +92,6 @@ class TestRunner:
                         elif part == 'skipped':
                             self.test_results['skipped'] = int(parts[i-1])
             
-            # Parse coverage from JSON file
             coverage_file = self.project_root / 'coverage.json'
             if coverage_file.exists():
                 try:
@@ -164,7 +158,6 @@ class TestRunner:
         """Run security tests"""
         print("Running security tests...")
         
-        # Check for common security issues
         command = [
             'python', 'manage.py', 'check', '--deploy'
         ]
@@ -190,13 +183,10 @@ class TestRunner:
         """Run code linting"""
         print("Running code linting...")
         
-        # Run flake8
         flake8_result = self.run_command(['flake8', 'apps/', 'config/'])
         
-        # Run black check
         black_result = self.run_command(['black', '--check', 'apps/', 'config/'])
         
-        # Run isort check
         isort_result = self.run_command(['isort', '--check-only', 'apps/', 'config/'])
         
         lint_passed = True
@@ -256,14 +246,12 @@ class TestRunner:
             from apps.categories.models import Category
             from apps.products.models import Product, Brand
             
-            # Test database connection
             with connection.cursor() as cursor:
                 cursor.execute("SELECT 1")
                 result = cursor.fetchone()
                 if result[0] != 1:
                     return False
             
-            # Test model operations
             test_user = User.objects.create_user(
                 username='test_db_user',
                 email='test@example.com',
@@ -304,7 +292,6 @@ class TestRunner:
                 stock_quantity=10
             )
             
-            # Cleanup test data
             test_product.delete()
             test_brand.delete()
             test_category.delete()
@@ -328,7 +315,6 @@ class TestRunner:
             
             client = Client()
             
-            # Test public endpoints
             endpoints = [
                 ('category-list', {}),
                 ('product-list', {}),
@@ -377,7 +363,6 @@ class TestRunner:
             for test in self.test_results['failed_tests']:
                 print(f"  - {test}")
         
-        # Overall status
         if self.test_results['failed'] == 0 and self.test_results['coverage'] >= 80:
             print(f"\n ALL TESTS PASSED - SYSTEM READY FOR DEPLOYMENT")
         else:
@@ -398,7 +383,6 @@ class TestRunner:
         
         results = {}
         
-        # Run each test type
         if 'migrations' in test_types:
             results['migrations'] = self.check_migrations()
         
@@ -426,10 +410,8 @@ class TestRunner:
         if 'endpoints' in test_types:
             results['endpoints'] = self.test_api_endpoints()
         
-        # report
         self.generate_report()
         
-        # individual test results
         print("\nDetailed Results:")
         for test_type, passed in results.items():
             status = " PASSED" if passed else " FAILED"
@@ -473,7 +455,6 @@ def main():
                 test_types = None
             success = runner.run_all_tests(test_types)
         else:
-            # Run specific test type
             test_methods = {
                 'unit': runner.run_unit_tests,
                 'integration': runner.run_integration_tests,

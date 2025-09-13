@@ -1,15 +1,11 @@
-#!/bin/bash
 
-# Activate virtual environment if it exists
 if [ -d "venv" ]; then
     source venv/bin/activate
 fi
 
-# Install MySQL dependencies
 echo "Installing MySQL dependencies..."
 pip install mysqlclient
 
-# Check if .env file exists
 if [ ! -f ".env" ]; then
     echo "Creating .env file from example..."
     cp .env.example .env
@@ -17,10 +13,8 @@ if [ ! -f ".env" ]; then
     exit 1
 fi
 
-# Load environment variables
 export $(cat .env | xargs)
 
-# Test MySQL connection
 echo "Testing MySQL connection..."
 python -c "
 import os
@@ -38,14 +32,11 @@ except Exception as e:
     exit(1)
 "
 
-# Run migrations
 echo "Running migrations..."
 python manage.py migrate
 
-# Create superuser and demo data
 echo "Setting up demo data..."
 python scripts/setup_demo_data.py
 
-# Start development server
 echo "Starting development server..."
 python manage.py runserver

@@ -47,7 +47,6 @@ class Product(models.Model):
         ('damaged', 'Damaged'),
     ]
     
-    # Basic Information
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=200)
     slug = models.SlugField(max_length=200, unique=True, blank=True)
@@ -55,53 +54,44 @@ class Product(models.Model):
     description = models.TextField()
     stock = models.IntegerField(default=0)
     
-    # Classification
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='products')
     brand = models.ForeignKey(Brand, on_delete=models.SET_NULL, null=True, blank=True)
     product_type = models.CharField(max_length=20, choices=PRODUCT_TYPES, default='simple')
     
-    # Identification
     sku = models.CharField(max_length=100, unique=True)
     barcode = models.CharField(max_length=50, blank=True)
     upc = models.CharField(max_length=20, blank=True)
     isbn = models.CharField(max_length=20, blank=True)
     mpn = models.CharField(max_length=50, blank=True, help_text="Manufacturer Part Number")
     
-    # Pricing
     price = models.DecimalField(max_digits=12, decimal_places=2)
     cost_price = models.DecimalField(max_digits=12, decimal_places=2, default=0.00)
     compare_at_price = models.DecimalField(max_digits=12, decimal_places=2, null=True, blank=True)
     wholesale_price = models.DecimalField(max_digits=12, decimal_places=2, null=True, blank=True)
     
-    # Inventory
     track_inventory = models.BooleanField(default=True)
     stock_quantity = models.PositiveIntegerField(default=0)
     low_stock_threshold = models.PositiveIntegerField(default=5)
     allow_backorders = models.BooleanField(default=False)
     
-    # Physical Properties
     weight = models.DecimalField(max_digits=8, decimal_places=2, null=True, blank=True)
     length = models.DecimalField(max_digits=8, decimal_places=2, null=True, blank=True)
     width = models.DecimalField(max_digits=8, decimal_places=2, null=True, blank=True)
     height = models.DecimalField(max_digits=8, decimal_places=2, null=True, blank=True)
     
-    # Condition and Quality
     condition = models.CharField(max_length=20, choices=CONDITION_CHOICES, default='new')
     warranty_period = models.PositiveIntegerField(null=True, blank=True, help_text="Warranty in months")
     
-    # SEO and Marketing
     meta_title = models.CharField(max_length=200, blank=True)
     meta_description = models.TextField(max_length=500, blank=True)
     keywords = models.CharField(max_length=500, blank=True)
     
-    # Status and Visibility
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='draft')
     is_active = models.BooleanField(default=True)
     is_featured = models.BooleanField(default=False)
     is_digital = models.BooleanField(default=False)
     requires_shipping = models.BooleanField(default=True)
     
-    # Ratings and Reviews
     average_rating = models.DecimalField(
         max_digits=3, 
         decimal_places=2, 
@@ -110,16 +100,13 @@ class Product(models.Model):
     )
     review_count = models.PositiveIntegerField(default=0)
     
-    # Sales Data
     total_sales = models.PositiveIntegerField(default=0)
     view_count = models.PositiveIntegerField(default=0)
     
-    # Dates
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     published_at = models.DateTimeField(null=True, blank=True)
     
-    # Relations
     created_by = models.ForeignKey(
         'auth.User', 
         on_delete=models.SET_NULL, 
@@ -189,18 +176,14 @@ class ProductVariant(models.Model):
     name = models.CharField(max_length=100)
     sku = models.CharField(max_length=100, unique=True)
     
-    # Pricing (can override parent product)
     price = models.DecimalField(max_digits=12, decimal_places=2, null=True, blank=True)
     cost_price = models.DecimalField(max_digits=12, decimal_places=2, null=True, blank=True)
     compare_at_price = models.DecimalField(max_digits=12, decimal_places=2, null=True, blank=True)
     
-    # Inventory
     stock_quantity = models.PositiveIntegerField(default=0)
     
-    # Physical Properties
     weight = models.DecimalField(max_digits=8, decimal_places=2, null=True, blank=True)
     
-    # Status
     is_active = models.BooleanField(default=True)
     
     created_at = models.DateTimeField(auto_now_add=True)

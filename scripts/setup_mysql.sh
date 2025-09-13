@@ -1,8 +1,6 @@
-#!/bin/bash
 
 echo "Setting up MySQL for Django Store Backend..."
 
-# Check if MySQL is installed
 if ! command -v mysql &> /dev/null; then
     echo "MySQL is not installed. Please install MySQL first."
     echo "On Ubuntu/Debian: sudo apt-get install mysql-server"
@@ -11,7 +9,6 @@ if ! command -v mysql &> /dev/null; then
     exit 1
 fi
 
-# Check if MySQL is running
 if ! pgrep -x "mysqld" > /dev/null; then
     echo "MySQL is not running. Please start MySQL service."
     echo "On Ubuntu/Debian: sudo systemctl start mysql"
@@ -19,7 +16,6 @@ if ! pgrep -x "mysqld" > /dev/null; then
     exit 1
 fi
 
-# Create database and user
 echo "Creating database and user..."
 mysql -u root -p << EOF
 CREATE DATABASE IF NOT EXISTS store CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;

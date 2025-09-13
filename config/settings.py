@@ -11,7 +11,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['.up.railway.app','localhost','127.0.0.1']
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://cynthia-store.up.railway.app',
+    'https://anthony-store.up.railway.app',
 ]
 
 INSTALLED_APPS = [
@@ -79,7 +79,7 @@ if DATABASE_ENGINE == 'postgresql':
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
-            'NAME': os.environ.get('DB_NAME', 'cynthia-store'),
+            'NAME': os.environ.get('DB_NAME', 'anthony-store'),
             'USER': os.environ.get('DB_USER', 'neondb_owner'),
             'PASSWORD': os.environ.get('DB_PASSWORD', 'npg_5fHunveBtjP2'),
             'HOST': os.environ.get('DB_HOST', 'ep-empty-art-a8rvgyvj-pooler.eastus2.azure.neon.tech'),
@@ -93,7 +93,7 @@ elif DATABASE_ENGINE == 'mysql':
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
-            'NAME': os.environ.get('DB_NAME', 'cynthia_online_store'),
+            'NAME': os.environ.get('DB_NAME', 'anthony_online_store'),
             'USER': os.environ.get('DB_USER', 'root'),
             'PASSWORD': os.environ.get('DB_PASSWORD', 'password'),
             'HOST': os.environ.get('DB_HOST', 'localhost'),
@@ -127,20 +127,17 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-# Internationalization
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'Africa/Nairobi'
 USE_I18N = True
 USE_TZ = True
 
-# Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
     BASE_DIR / 'static',
 ]
 
-# Media files
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
@@ -170,7 +167,7 @@ REST_FRAMEWORK = {
 }
 
 CORS_ALLOWED_ORIGINS = [
-    "https://cynthia-store.up.railway.app",
+    "https://anthony-store.up.railway.app",
     "http://localhost:3000",
     "http://127.0.0.1:3000",
     "http://localhost:8080",
@@ -194,7 +191,6 @@ OIDC_OP_USER_ENDPOINT = os.environ.get('OIDC_OP_USER_ENDPOINT', '')
 OIDC_RP_SIGN_ALGO = 'RS256'
 OIDC_OP_JWKS_ENDPOINT = os.environ.get('OIDC_OP_JWKS_ENDPOINT', '')
 
-# Email settings
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = os.environ.get('EMAIL_HOST', 'smtp.gmail.com')
 EMAIL_PORT = int(os.environ.get('EMAIL_PORT', 587))
@@ -203,19 +199,16 @@ EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER', 'anthonymakori2@gmail.com')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD', '')
 DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL', 'noreply@anthony-store.com')
 
-# Africa's Talking SMS Configuration
 AFRICASTALKING_USERNAME = os.environ.get('AFRICASTALKING_USERNAME', 'anthony_store')
 AFRICASTALKING_API_KEY = os.environ.get('AFRICASTALKING_API_KEY', '')
-AFRICASTALKING_SENDER = os.environ.get('AFRICASTALKING_SENDER', 'CynthiaStore')
+AFRICASTALKING_SENDER = os.environ.get('AFRICASTALKING_SENDER', 'AnthonyStore')
 
-# Admin and business contact information
 ADMIN_EMAIL = os.environ.get('ADMIN_EMAIL', 'anthonymakori2@gmail.com')
 BUSINESS_PHONE = os.environ.get('BUSINESS_PHONE', '+254707497200')
 BUSINESS_EMAIL = os.environ.get('BUSINESS_EMAIL', 'anthonymakori2@gmail.com')
 BUSINESS_NAME = 'Anthony Store'
 BUSINESS_ADDRESS = os.environ.get('BUSINESS_ADDRESS', 'Nairobi, Kenya')
 
-# Swagger settings
 SWAGGER_SETTINGS = {
     'SECURITY_DEFINITIONS': {
         'Token': {
@@ -251,7 +244,6 @@ SWAGGER_SETTINGS = {
     'SHOW_COMMON_EXTENSIONS': True,
 }
 
-# Logging configuration
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -269,7 +261,7 @@ LOGGING = {
         'file': {
             'level': 'INFO',
             'class': 'logging.FileHandler',
-            'filename': 'cynthia_online_store.log',
+            'filename': 'anthony_online_store.log',
             'formatter': 'verbose',
         },
         'console': {
@@ -296,7 +288,6 @@ LOGGING = {
     },
 }
 
-# Cache configuration
 CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.redis.RedisCache',
@@ -307,12 +298,10 @@ CACHES = {
     }
 }
 
-# Session configuration
 SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
 SESSION_CACHE_ALIAS = 'default'
-SESSION_COOKIE_AGE = 86400  # 24 hours
+SESSION_COOKIE_AGE = 86400
 
-# Security settings for production
 if not DEBUG:
     SECURE_SSL_REDIRECT = True
     SESSION_COOKIE_SECURE = True
@@ -325,7 +314,6 @@ if not DEBUG:
     SECURE_HSTS_PRELOAD = True
 
 
-# Testing settings
 if 'test' in os.sys.argv:
     DATABASES['default'] = {
         'ENGINE': 'django.db.backends.sqlite3',

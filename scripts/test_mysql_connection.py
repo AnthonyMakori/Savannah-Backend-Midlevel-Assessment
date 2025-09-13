@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 """
 Script to test MySQL connection
 """
@@ -6,7 +5,6 @@ import os
 import sys
 import django
 
-# Set up Django environment
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings')
 django.setup()
@@ -25,7 +23,6 @@ def test_connection():
         print(style.SUCCESS(f"✓ Successfully connected to MySQL"))
         print(style.SUCCESS(f"✓ MySQL version: {version}"))
         
-        # Test database operations
         cursor.execute("SHOW TABLES")
         tables = cursor.fetchall()
         print(style.SUCCESS(f"✓ Found {len(tables)} tables in database"))

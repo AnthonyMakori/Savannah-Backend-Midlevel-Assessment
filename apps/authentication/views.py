@@ -118,7 +118,6 @@ class LogoutView(APIView):
     )
     def post(self, request):
         try:
-            # Delete the user's token
             request.user.auth_token.delete()
         except:
             pass

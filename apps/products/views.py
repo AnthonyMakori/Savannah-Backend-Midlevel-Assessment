@@ -32,7 +32,6 @@ class ProductViewSet(viewsets.ModelViewSet):
         from apps.categories.models import Category
         try:
             category = Category.objects.get(slug=category_slug)
-            # Get all descendant categories including the current one
             descendants = category.get_descendants()
             category_ids = [category.id] + [desc.id for desc in descendants]
             products = Product.objects.filter(category_id__in=category_ids)

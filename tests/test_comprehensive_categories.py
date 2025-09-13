@@ -52,7 +52,6 @@ class TestCategoriesComprehensive:
     
     def test_category_hierarchy_creation(self, admin_client):
         """Test creating category hierarchy"""
-        # Create parent category
         parent_url = reverse('category-list')
         parent_data = {
             'name': 'Electronics',
@@ -61,7 +60,6 @@ class TestCategoriesComprehensive:
         parent_response = admin_client.post(parent_url, parent_data)
         parent_id = parent_response.data['id']
         
-        # Create child category
         child_data = {
             'name': 'Smartphones',
             'description': 'Mobile phones',
@@ -72,14 +70,12 @@ class TestCategoriesComprehensive:
         assert child_response.status_code == status.HTTP_201_CREATED
         assert child_response.data['parent'] == parent_id
         
-        # Verify hierarchy
         child_category = Category.objects.get(id=child_response.data['id'])
         assert child_category.level == 1
         assert child_category.parent.name == 'Electronics'
     
     def test_category_tree_endpoint(self, api_client):
         """Test category tree endpoint"""
-        # Create hierarchy
         electronics = CategoryFactory(name='Electronics')
         phones = CategoryFactory(name='Phones', parent=electronics)
         smartphones = CategoryFactory(name='Smartphones', parent=phones)
@@ -90,7 +86,6 @@ class TestCategoriesComprehensive:
         assert response.status_code == status.HTTP_200_OK
         assert len(response.data) >= 1
         
-        # Find electronics category in response
         electronics_data = next(cat for cat in response.data if cat['name'] == 'Electronics')
         assert len(electronics_data['children']) >= 1
         
@@ -125,7 +120,7 @@ class TestCategoriesComprehensive:
         response = api_client.get(url)
         
         assert response.status_code == status.HTTP_200_OK
-        assert len(response.data) >= 2  # Should include both parent and child products
+        assert len(response.data) >= 2
     
     def test_category_average_price_endpoint(self, api_client):
         """Test category average price endpoint"""
@@ -188,7 +183,7 @@ class TestCategoriesComprehensive:
         category = CategoryFactory()
         ProductFactory(category=category, is_active=True)
         ProductFactory(category=category, is_active=True)
-        ProductFactory(category=category, is_active=False)  # Should not be counted
+        ProductFactory(category=category, is_active=False)
         
         assert category.product_count == 2
     
@@ -233,7 +228,7 @@ class TestCategoriesComprehensive:
         
         url = reverse('category-list')
         data = {
-            'name': 'Unique Category',  # Duplicate name
+            'name': 'Unique Category',
             'description': 'Another category'
         }
         response = admin_client.post(url, data)

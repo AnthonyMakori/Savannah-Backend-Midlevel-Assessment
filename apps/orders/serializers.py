@@ -33,17 +33,13 @@ class OrderSerializer(serializers.ModelSerializer):
     def update(self, instance, validated_data):
         items_data = validated_data.pop('items', None)
         
-        # Update order fields
         for attr, value in validated_data.items():
             setattr(instance, attr, value)
         instance.save()
         
-        # Update order items if provided
         if items_data is not None:
-            # Remove existing items
             instance.items.all().delete()
             
-            # Create new items
             for item_data in items_data:
                 OrderItem.objects.create(order=instance, **item_data)
         

@@ -52,7 +52,6 @@ class TestOrdersComprehensive:
     
     def test_create_order_without_customer_profile(self, authenticated_client, user, product):
         """Test creating order without customer profile"""
-        # Ensure user has no customer profile
         url = reverse('order-list')
         data = {
             'total_amount': '999.99',
@@ -105,12 +104,10 @@ class TestOrdersComprehensive:
             shipping_address='Address 2'
         )
         
-        # Authenticate as customer1
         from rest_framework.authtoken.models import Token
         token1, _ = Token.objects.get_or_create(user=customer1.user)
         api_client.credentials(HTTP_AUTHORIZATION=f'Token {token1.key}')
         
-        # Get orders list
         url = reverse('order-list')
         response = api_client.get(url)
         
@@ -158,10 +155,8 @@ class TestOrdersComprehensive:
     @patch('apps.orders.signals.send_email_notification')
     def test_order_notifications(self, mock_email, mock_sms, order):
         """Test order notification signals"""
-        # Trigger the signal manually
         send_order_notifications(Order, order, created=True)
         
-        # Verify notifications were called
         mock_sms.assert_called_once_with(order)
         mock_email.assert_called_once_with(order)
     
@@ -197,7 +192,6 @@ class TestOrdersComprehensive:
         today = date.today()
         yesterday = today - timedelta(days=1)
         
-        # Create orders on different dates
         order1 = Order.objects.create(customer=customer, total_amount=100, shipping_address='Address')
         order1.created_at = yesterday
         order1.save()
@@ -213,7 +207,7 @@ class TestOrdersComprehensive:
         """Test order total amount validation"""
         url = reverse('order-list')
         data = {
-            'total_amount': '0.00',  # Invalid total
+            'total_amount': '0.00',
             'shipping_address': '123 Test Street, Nairobi, Kenya',
             'items': [
                 {
@@ -236,7 +230,7 @@ class TestOrdersComprehensive:
             'items': [
                 {
                     'product': str(product.id),
-                    'quantity': 0,  # Invalid quantity
+                    'quantity': 0,
                     'price': '999.99'
                 }
             ]

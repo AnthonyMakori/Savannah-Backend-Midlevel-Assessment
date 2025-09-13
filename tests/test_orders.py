@@ -58,14 +58,11 @@ def create_product():
 
 @pytest.mark.django_db
 def test_create_order(api_client, create_customer, create_product):
-    # Create customer and product
     customer = create_customer()
     product = create_product("Laptop", 1000)
     
-    # Login as customer
     api_client.force_authenticate(user=customer.user)
     
-    # Create order
     url = reverse('order-list')
     data = {
         'total_amount': '1000.00',
@@ -88,14 +85,11 @@ def test_create_order(api_client, create_customer, create_product):
 
 @pytest.mark.django_db
 def test_list_orders_as_admin(api_client, create_user, create_customer, create_product):
-    # Create admin user
     admin_user = create_user("admin", is_staff=True)
     
-    # Create customer and product
     customer = create_customer()
     product = create_product("Laptop", 1000)
     
-    # Create order
     order = Order.objects.create(
         customer=customer,
         total_amount=1000,
@@ -108,10 +102,8 @@ def test_list_orders_as_admin(api_client, create_user, create_customer, create_p
         price=1000
     )
     
-    # Login as admin
     api_client.force_authenticate(user=admin_user)
     
-    # List orders
     url = reverse('order-list')
     response = api_client.get(url)
     
@@ -121,12 +113,10 @@ def test_list_orders_as_admin(api_client, create_user, create_customer, create_p
 
 @pytest.mark.django_db
 def test_customer_can_only_see_own_orders(api_client, create_customer, create_product):
-    # Create customers and product
     customer1 = create_customer("customer1")
     customer2 = create_customer("customer2")
     product = create_product("Laptop", 1000)
     
-    # Create orders for both customers
     order1 = Order.objects.create(
         customer=customer1,
         total_amount=1000,
@@ -151,10 +141,8 @@ def test_customer_can_only_see_own_orders(api_client, create_customer, create_pr
         price=1000
     )
     
-    # Login as customer1
     api_client.force_authenticate(user=customer1.user)
     
-    # List orders
     url = reverse('order-list')
     response = api_client.get(url)
     

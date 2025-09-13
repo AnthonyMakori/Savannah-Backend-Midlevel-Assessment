@@ -32,7 +32,6 @@ class CategoryViewSet(viewsets.ModelViewSet):
         Get all products in a category and its subcategories
         """
         category = self.get_object()
-        # Get all descendant categories including the current one
         descendants = category.get_descendants()
         category_ids = [category.id] + [desc.id for desc in descendants]
         products = Product.objects.filter(category_id__in=category_ids)
@@ -47,7 +46,6 @@ class CategoryViewSet(viewsets.ModelViewSet):
         Get the average price of products in a category and its subcategories
         """
         category = self.get_object()
-        # Get all descendant categories including the current one
         descendants = category.get_descendants()
         category_ids = [category.id] + [desc.id for desc in descendants]
         products = Product.objects.filter(category_id__in=category_ids)
