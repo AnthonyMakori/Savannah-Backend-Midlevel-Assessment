@@ -230,3 +230,4 @@ INFO 2025-09-22 16:15:49,011 basehttp 19748 2280 "GET /static/admin/img/selector
 INFO 2025-09-22 16:34:54,737 autoreload 19748 9860 C:\Users\anton\Desktop\savannah-backend-assessment\config\settings.py changed, reloading.
 INFO 2025-09-22 16:34:58,787 autoreload 11080 14936 Watching for file changes with StatReloader
 INFO 2025-09-22 16:36:26,177 autoreload 11080 14936 C:\Users\anton\Desktop\savannah-backend-assessment\config\settings.py changed, reloading.
+INFO 2025-09-22 16:36:30,419 autoreload 5840 15040 Watching for file changes with StatReloader
