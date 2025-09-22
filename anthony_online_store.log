@@ -14,3 +14,219 @@ INFO 2025-09-14 01:40:54,026 autoreload 8040 8504 Watching for file changes with
 INFO 2025-09-14 01:50:13,255 autoreload 4444 11436 Watching for file changes with StatReloader
 INFO 2025-09-14 01:55:22,384 autoreload 4444 11436 C:\Users\anton\Desktop\savannah-backend-assessment-refined\savannah-backend-assessment\config\settings.py changed, reloading.
 INFO 2025-09-14 01:56:45,161 autoreload 8036 8040 Watching for file changes with StatReloader
+INFO 2025-09-14 17:00:03,353 autoreload 3096 8868 Watching for file changes with StatReloader
+INFO 2025-09-16 13:07:03,519 autoreload 9996 9704 Watching for file changes with StatReloader
+INFO 2025-09-22 15:43:36,484 autoreload 20328 6180 Watching for file changes with StatReloader
+INFO 2025-09-22 15:51:11,087 autoreload 19748 9860 Watching for file changes with StatReloader
+INFO 2025-09-22 15:57:52,838 basehttp 19748 19364 "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-09-22 15:57:53,228 basehttp 19748 19364 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4186
+INFO 2025-09-22 15:57:53,872 basehttp 19748 20016 "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2808
+INFO 2025-09-22 15:57:53,876 basehttp 19748 18796 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+INFO 2025-09-22 15:57:53,897 basehttp 19748 19364 "GET /static/admin/css/base.css HTTP/1.1" 200 22120
+INFO 2025-09-22 15:57:53,942 basehttp 19748 9812 "GET /static/admin/css/responsive.css HTTP/1.1" 200 16565
+INFO 2025-09-22 15:57:53,945 basehttp 19748 9856 "GET /static/admin/css/login.css HTTP/1.1" 200 951
+INFO 2025-09-22 15:57:53,981 basehttp 19748 8964 "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+INFO 2025-09-22 15:57:54,052 basehttp 19748 9812 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+WARNING 2025-09-22 15:57:54,187 log 19748 9812 Not Found: /favicon.ico
+WARNING 2025-09-22 15:57:54,188 basehttp 19748 9812 "GET /favicon.ico HTTP/1.1" 404 4924
+INFO 2025-09-22 15:58:14,798 basehttp 19748 19584 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-09-22 15:58:17,208 basehttp 19748 19584 "GET /admin/ HTTP/1.1" 200 11577
+INFO 2025-09-22 15:58:17,293 basehttp 19748 19584 "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2025-09-22 15:58:17,323 basehttp 19748 15936 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2025-09-22 15:58:17,329 basehttp 19748 19584 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2025-09-22 15:58:33,940 basehttp 19748 19584 "GET /admin/auth/user/ HTTP/1.1" 200 15855
+INFO 2025-09-22 15:58:34,009 basehttp 19748 19584 "GET /static/admin/css/changelists.css HTTP/1.1" 200 6878
+INFO 2025-09-22 15:58:34,077 basehttp 19748 19584 "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+INFO 2025-09-22 15:58:34,083 basehttp 19748 17340 "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2025-09-22 15:58:34,087 basehttp 19748 6092 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9777
+INFO 2025-09-22 15:58:34,109 basehttp 19748 8656 "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+INFO 2025-09-22 15:58:34,141 basehttp 19748 19584 "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2025-09-22 15:58:34,219 basehttp 19748 17340 "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2025-09-22 15:58:34,242 basehttp 19748 8656 "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+INFO 2025-09-22 15:58:34,293 basehttp 19748 19584 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+INFO 2025-09-22 15:58:34,345 basehttp 19748 7240 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+INFO 2025-09-22 15:58:34,522 basehttp 19748 6092 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+INFO 2025-09-22 15:58:34,601 basehttp 19748 6092 "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2025-09-22 15:58:36,567 basehttp 19748 15936 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-22 15:58:36,657 basehttp 19748 15936 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2025-09-22 15:58:36,665 basehttp 19748 6092 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+INFO 2025-09-22 15:58:36,666 basehttp 19748 7240 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+INFO 2025-09-22 16:01:17,618 basehttp 19748 2324 "GET /admin/customers/customer/ HTTP/1.1" 200 13457
+INFO 2025-09-22 16:01:19,659 basehttp 19748 2324 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-22 16:01:29,073 basehttp 19748 2324 "GET /admin/customers/customer/add/ HTTP/1.1" 200 36180
+INFO 2025-09-22 16:01:29,152 basehttp 19748 2324 "GET /static/admin/css/forms.css HTTP/1.1" 200 8525
+INFO 2025-09-22 16:01:29,184 basehttp 19748 2324 "GET /static/admin/css/widgets.css HTTP/1.1" 200 11991
+INFO 2025-09-22 16:01:29,187 basehttp 19748 8232 "GET /static/admin/js/calendar.js HTTP/1.1" 200 9141
+INFO 2025-09-22 16:01:29,227 basehttp 19748 6316 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2025-09-22 16:01:29,230 basehttp 19748 19416 "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19319
+INFO 2025-09-22 16:01:29,314 basehttp 19748 19416 "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2025-09-22 16:01:31,207 basehttp 19748 7832 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-22 16:01:31,375 basehttp 19748 19416 "GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+INFO 2025-09-22 16:01:31,376 basehttp 19748 7832 "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+INFO 2025-09-22 16:01:59,324 basehttp 19748 7832 "GET /static/admin/img/calendar-icons.svg HTTP/1.1" 200 2455
+INFO 2025-09-22 16:05:02,514 basehttp 19748 7832 "POST /admin/customers/customer/add/ HTTP/1.1" 200 36912
+INFO 2025-09-22 16:05:04,674 basehttp 19748 7832 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-22 16:05:14,366 basehttp 19748 7832 "GET /admin/auth/user/add/?_to_field=id&_popup=1 HTTP/1.1" 200 8113
+INFO 2025-09-22 16:05:14,427 basehttp 19748 7832 "GET /static/admin/css/unusable_password_field.css HTTP/1.1" 200 663
+INFO 2025-09-22 16:05:14,469 basehttp 19748 7832 "GET /static/admin/js/unusable_password_field.js HTTP/1.1" 200 1480
+INFO 2025-09-22 16:05:16,529 basehttp 19748 19416 - Broken pipe from ('127.0.0.1', 58103)
+INFO 2025-09-22 16:05:18,759 basehttp 19748 7832 "GET /admin/auth/user/add/?_to_field=id&_popup=1 HTTP/1.1" 200 8113
+INFO 2025-09-22 16:05:21,068 basehttp 19748 7832 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-22 16:05:38,451 basehttp 19748 7832 "POST /admin/auth/user/add/?_to_field=id&_popup=1 HTTP/1.1" 200 8470
+INFO 2025-09-22 16:05:40,571 basehttp 19748 7832 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-22 16:06:17,483 basehttp 19748 7832 "POST /admin/auth/user/add/?_to_field=id&_popup=1 HTTP/1.1" 200 325
+INFO 2025-09-22 16:06:17,561 basehttp 19748 7832 "GET /static/admin/js/popup_response.js HTTP/1.1" 200 532
+INFO 2025-09-22 16:06:44,327 basehttp 19748 7832 "POST /admin/customers/customer/add/ HTTP/1.1" 302 0
+INFO 2025-09-22 16:06:47,244 basehttp 19748 7832 "GET /admin/customers/customer/ HTTP/1.1" 200 15846
+INFO 2025-09-22 16:06:49,360 basehttp 19748 7832 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-22 16:07:19,760 basehttp 19748 3840 "GET /api/customers/ HTTP/1.1" 200 17290
+INFO 2025-09-22 16:07:19,869 basehttp 19748 3840 "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 200 121457
+INFO 2025-09-22 16:07:19,905 basehttp 19748 19536 "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 200 3426
+INFO 2025-09-22 16:07:19,953 basehttp 19748 3840 "GET /static/rest_framework/js/csrf.js HTTP/1.1" 200 1793
+INFO 2025-09-22 16:07:19,965 basehttp 19748 19152 "GET /static/rest_framework/css/prettify.css HTTP/1.1" 200 817
+INFO 2025-09-22 16:07:19,987 basehttp 19748 19736 "GET /static/rest_framework/css/default.css HTTP/1.1" 200 1152
+INFO 2025-09-22 16:07:20,058 basehttp 19748 19536 "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 200 39680
+INFO 2025-09-22 16:07:20,097 basehttp 19748 19152 "GET /static/rest_framework/js/default.js HTTP/1.1" 200 1268
+INFO 2025-09-22 16:07:20,134 basehttp 19748 3840 "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 200 13632
+INFO 2025-09-22 16:07:20,246 basehttp 19748 4396 "GET /static/rest_framework/js/jquery-3.7.1.min.js HTTP/1.1" 200 87533
+INFO 2025-09-22 16:07:20,304 basehttp 19748 19736 "GET /static/rest_framework/js/load-ajax-form.js HTTP/1.1" 200 59
+INFO 2025-09-22 16:07:20,313 basehttp 19748 19536 "GET /static/rest_framework/img/grid.png HTTP/1.1" 200 1458
+INFO 2025-09-22 16:07:20,334 basehttp 19748 16924 "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 200 3796
+INFO 2025-09-22 16:07:20,454 basehttp 19748 3840 "GET /static/rest_framework/fonts/glyphicons-halflings-regular.woff2 HTTP/1.1" 200 18028
+WARNING 2025-09-22 16:08:51,167 log 19748 9392 Not Found: /customers/
+WARNING 2025-09-22 16:08:51,168 basehttp 19748 9392 "GET /customers/ HTTP/1.1" 404 4921
+INFO 2025-09-22 16:09:04,139 basehttp 19748 9392 "GET /api/customers/ HTTP/1.1" 200 17290
+ERROR 2025-09-22 16:09:22,965 log 19748 9392 Internal Server Error: /api/customers/
+Traceback (most recent call last):
+  File "C:\Users\anton\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+psycopg2.errors.NotNullViolation: null value in column "user_id" of relation "customers_customer" violates not-null constraint
+DETAIL:  Failing row contains (2, 46ff3c5d-6169-44bc-85dc-297c6e6ff754, , , , , null, null, , , 0791354869, , , , , , , , Kenya, , , , individual, f, null, en, KES, f, t, t, 0.00, 0, 0.00, 2025-09-22 13:09:21.784212+00, 2025-09-22 13:09:21.784317+00, null, t, , null).
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\anton\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\anton\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\anton\AppData\Roaming\Python\Python313\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\anton\AppData\Roaming\Python\Python313\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anton\AppData\Roaming\Python\Python313\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\anton\AppData\Roaming\Python\Python313\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\anton\AppData\Roaming\Python\Python313\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\anton\AppData\Roaming\Python\Python313\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\anton\AppData\Roaming\Python\Python313\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\anton\AppData\Roaming\Python\Python313\site-packages\rest_framework\mixins.py", line 24, in perform_create
+    serializer.save()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\anton\AppData\Roaming\Python\Python313\site-packages\rest_framework\serializers.py", line 210, in save
+    self.instance = self.create(validated_data)
+                    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\anton\AppData\Roaming\Python\Python313\site-packages\rest_framework\serializers.py", line 991, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "C:\Users\anton\AppData\Roaming\Python\Python313\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\anton\AppData\Roaming\Python\Python313\site-packages\django\db\models\query.py", line 663, in create
+    obj.save(force_insert=True, using=self.db)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anton\AppData\Roaming\Python\Python313\site-packages\django\db\models\base.py", line 902, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\anton\AppData\Roaming\Python\Python313\site-packages\django\db\models\base.py", line 1008, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "C:\Users\anton\AppData\Roaming\Python\Python313\site-packages\django\db\models\base.py", line 1169, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "C:\Users\anton\AppData\Roaming\Python\Python313\site-packages\django\db\models\base.py", line 1210, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "C:\Users\anton\AppData\Roaming\Python\Python313\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\anton\AppData\Roaming\Python\Python313\site-packages\django\db\models\query.py", line 1864, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anton\AppData\Roaming\Python\Python313\site-packages\django\db\models\sql\compiler.py", line 1882, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\anton\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\anton\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\anton\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\anton\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anton\AppData\Roaming\Python\Python313\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\anton\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+django.db.utils.IntegrityError: null value in column "user_id" of relation "customers_customer" violates not-null constraint
+DETAIL:  Failing row contains (2, 46ff3c5d-6169-44bc-85dc-297c6e6ff754, , , , , null, null, , , 0791354869, , , , , , , , Kenya, , , , individual, f, null, en, KES, f, t, t, 0.00, 0, 0.00, 2025-09-22 13:09:21.784212+00, 2025-09-22 13:09:21.784317+00, null, t, , null).
+
+ERROR 2025-09-22 16:09:22,996 basehttp 19748 9392 "POST /api/customers/ HTTP/1.1" 500 236373
+INFO 2025-09-22 16:10:34,715 basehttp 19748 16164 "POST /admin/logout/ HTTP/1.1" 200 3581
+INFO 2025-09-22 16:10:36,932 basehttp 19748 16164 "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-09-22 16:10:36,947 basehttp 19748 16164 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4186
+INFO 2025-09-22 16:10:52,892 basehttp 19748 14756 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4354
+INFO 2025-09-22 16:11:29,066 basehttp 19748 8716 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-09-22 16:11:31,360 basehttp 19748 8716 "GET /admin/ HTTP/1.1" 200 12344
+INFO 2025-09-22 16:11:49,518 basehttp 19748 20356 - Broken pipe from ('127.0.0.1', 52433)
+INFO 2025-09-22 16:11:53,999 basehttp 19748 12572 "GET /admin/products/product/add/ HTTP/1.1" 200 41159
+INFO 2025-09-22 16:11:54,131 basehttp 19748 7240 "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+INFO 2025-09-22 16:11:56,159 basehttp 19748 12572 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-22 16:12:55,134 basehttp 19748 2280 "GET /admin/categories/category/add/?_to_field=id&_popup=1 HTTP/1.1" 200 18921
+INFO 2025-09-22 16:12:57,192 basehttp 19748 2280 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-22 16:13:27,924 basehttp 19748 2280 "GET /admin/categories/category/add/?_to_field=id&_popup=1 HTTP/1.1" 200 18921
+INFO 2025-09-22 16:13:30,066 basehttp 19748 2280 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-22 16:15:23,057 basehttp 19748 2280 "GET /admin/authtoken/tokenproxy/add/ HTTP/1.1" 200 13804
+INFO 2025-09-22 16:15:25,214 basehttp 19748 2280 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-22 16:15:46,779 basehttp 19748 2280 "GET /admin/auth/group/add/ HTTP/1.1" 200 21705
+INFO 2025-09-22 16:15:46,875 basehttp 19748 3776 "GET /static/admin/js/SelectBox.js HTTP/1.1" 200 4530
+INFO 2025-09-22 16:15:46,882 basehttp 19748 15520 "GET /static/admin/js/SelectFilter2.js HTTP/1.1" 200 15709
+INFO 2025-09-22 16:15:48,891 basehttp 19748 2280 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-22 16:15:49,011 basehttp 19748 2280 "GET /static/admin/img/selector-icons.svg HTTP/1.1" 200 3291
+INFO 2025-09-22 16:34:54,737 autoreload 19748 9860 C:\Users\anton\Desktop\savannah-backend-assessment\config\settings.py changed, reloading.
+INFO 2025-09-22 16:34:58,787 autoreload 11080 14936 Watching for file changes with StatReloader
+INFO 2025-09-22 16:36:26,177 autoreload 11080 14936 C:\Users\anton\Desktop\savannah-backend-assessment\config\settings.py changed, reloading.

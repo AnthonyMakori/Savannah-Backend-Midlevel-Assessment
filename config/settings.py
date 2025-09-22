@@ -81,11 +81,12 @@ if DATABASE_ENGINE == 'postgresql':
             'ENGINE': 'django.db.backends.postgresql',
             'NAME': os.environ.get('DB_NAME', 'anthony-store'),
             'USER': os.environ.get('DB_USER', 'neondb_owner'),
-            'PASSWORD': os.environ.get('DB_PASSWORD', 'npg_5fHunveBtjP2'),
-            'HOST': os.environ.get('DB_HOST', 'ep-empty-art-a8rvgyvj-pooler.eastus2.azure.neon.tech'),
+            'PASSWORD': os.environ.get('DB_PASSWORD', 'npg_JEpKDTaZ0u3j'),
+            'HOST': os.environ.get('DB_HOST', 'ep-wispy-forest-adhtz5mq-pooler.c-2.us-east-1.aws.neon.tech'),
             'PORT': os.environ.get('DB_PORT', '5432'),
             'OPTIONS': {
                 'connect_timeout': 10,
+                'sslmode': 'require',
             },
         }
     }
@@ -172,8 +173,8 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:3000",
     "http://localhost:8080",
     "http://127.0.0.1:8080",
-    "https://anthony-store.vercel.app/",
-    "https://anthony-store.com",
+    "https://anthony-store.vercel.app",
+    "https://anthony-store.com", 
 ]
 
 CORS_ALLOW_CREDENTIALS = True
@@ -195,7 +196,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = os.environ.get('EMAIL_HOST', 'smtp.gmail.com')
 EMAIL_PORT = int(os.environ.get('EMAIL_PORT', 587))
 EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS', 'True') == 'True'
-EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER', 'anthonymakori2@gmail.com')
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER', 'antonymakori2019@gmail.com')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD', '')
 DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL', 'noreply@anthony-store.com')
 
@@ -205,7 +206,7 @@ AFRICASTALKING_SENDER = os.environ.get('AFRICASTALKING_SENDER', 'AnthonyStore')
 
 ADMIN_EMAIL = os.environ.get('ADMIN_EMAIL', 'anthonymakori2@gmail.com')
 BUSINESS_PHONE = os.environ.get('BUSINESS_PHONE', '+254707497200')
-BUSINESS_EMAIL = os.environ.get('BUSINESS_EMAIL', 'anthonymakori2@gmail.com')
+BUSINESS_EMAIL = os.environ.get('BUSINESS_EMAIL', 'antonymakori2019@gmail.com')
 BUSINESS_NAME = 'Anthony Store'
 BUSINESS_ADDRESS = os.environ.get('BUSINESS_ADDRESS', 'Nairobi, Kenya')
 
@@ -317,7 +318,7 @@ if not DEBUG:
 if 'test' in os.sys.argv:
     DATABASES['default'] = {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': ':memory:'
+        'NAME': ':memory:',
     }
     PASSWORD_HASHERS = [
         'django.contrib.auth.hashers.MD5PasswordHasher',
