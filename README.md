@@ -31,13 +31,6 @@ Features exhaustive testing, multi-environment deployment automation, and advanc
 - PostgreSQL (primary), MySQL (alternative), SQLite (dev)  
 - Environment-based DB configs  
 
----
-
-## 🖥️ Screenshots  
-![image](https://github.com/user-attachments/assets/6a59d156-3cc6-46fe-a21a-a902eba3e1ee)  
-![image](https://github.com/user-attachments/assets/f9ece859-ad01-4044-9a85-f9f505f33e7f)  
-
----
 
 ## 📦 Installation  
 
